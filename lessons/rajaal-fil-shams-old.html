@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>رجال في الشمس · درس تفاعلي · الصف السابع</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Cairo',sans-serif;background:#fdf6ec;color:#3b2f2f;line-height:2;padding-bottom:60px}
+header{background:linear-gradient(135deg,#b45309,#d97706 55%,#f59e0b);color:#fff;text-align:center;padding:38px 16px 30px;box-shadow:0 4px 14px rgba(0,0,0,.15)}
+header h1{font-size:2rem;font-weight:900;text-shadow:0 2px 6px rgba(0,0,0,.25)}
+header p{margin-top:8px;opacity:.95}
+nav{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;background:#fff;position:sticky;top:0;padding:10px;box-shadow:0 2px 8px rgba(0,0,0,.08);z-index:50}
+nav a{display:inline-block;padding:6px 12px;border-radius:20px;background:#fde8cd;color:#92400e;font-weight:700;text-decoration:none;font-size:.85rem}
+nav a:hover{background:#d97706;color:#fff}
+main{max-width:860px;margin:24px auto;padding:0 14px}
+.card{background:#fff;border-radius:16px;padding:20px 22px;margin-bottom:22px;box-shadow:0 3px 10px rgba(120,72,20,.10);border-right:6px solid #d97706}
+.card h2{color:#b45309;font-size:1.3rem;margin-bottom:10px}
+.card h3{color:#92400e;font-size:1.05rem;margin:14px 0 6px}
+.passage{background:#fffdf7;border:1px solid #f0e0c0;border-radius:12px;padding:16px 18px;font-size:1.12rem;margin:10px 0}
+.w{color:#b91c1c;font-weight:700;cursor:pointer;border-bottom:2px dotted #b91c1c;position:relative}
+.w:hover{background:#fef3c7;border-radius:4px}
+.tip{display:none;position:absolute;bottom:130%;right:0;background:#1c1917;color:#fef3c7;padding:8px 12px;border-radius:10px;font-size:.9rem;font-weight:400;min-width:140px;max-width:230px;z-index:60;box-shadow:0 4px 12px rgba(0,0,0,.3);text-align:center;line-height:1.6}
+.tip::after{content:'';position:absolute;top:100%;right:18px;border:7px solid transparent;border-top-color:#1c1917}
+.w.open .tip{display:block}
+.new{color:#1d4ed8;font-weight:700}
+.idea{background:#fdf1de;border-radius:10px;padding:10px 14px;margin:8px 0}
+.idea b{color:#b45309}
+.lang{background:#eef6ff;border:1px solid #cfe4ff;border-radius:12px;padding:12px 16px;margin:10px 0}
+.lang h4{color:#1e40af;margin-bottom:6px;font-size:1rem}
+.sim{background:#f0fdf4;border:1px solid #bbf7d0;border-radius:12px;padding:12px 16px;margin:10px 0}
+.sim h4{color:#166534;margin-bottom:6px;font-size:1rem}
+details{background:#faf3e7;border-radius:12px;margin-top:10px;overflow:hidden}
+details summary{cursor:pointer;padding:10px 14px;font-weight:700;color:#92400e;background:#f7e9d2;list-style:none}
+details summary::before{content:'◂ '}
+details[open] summary{background:#f0dfc0}
+details .body{padding:12px 16px}
+button.rev{background:#d97706;color:#fff;border:none;border-radius:10px;padding:7px 16px;font-family:inherit;font-size:.95rem;font-weight:700;cursor:pointer;margin-top:8px}
+button.rev:hover{background:#b45309}
+.ans{display:none;background:#ecfdf5;border:1px solid #a7f3d0;border-radius:10px;padding:10px 14px;margin-top:8px;color:#065f46}
+.ans.open{display:block}
+.q{margin:14px 0;padding:12px;background:#fdf9f0;border-radius:12px;border:1px dashed #e7d3ae}
+button.opt{display:block;width:100%;text-align:right;background:#fff;border:2px solid #e7d3ae;border-radius:10px;padding:9px 14px;margin:6px 0;font-family:inherit;font-size:1rem;cursor:pointer;transition:.15s}
+button.opt:hover{border-color:#d97706}
+button.opt.correct{background:#d1fae5;border-color:#10b981;color:#065f46;font-weight:700}
+button.opt.wrong{background:#fee2e2;border-color:#ef4444;color:#991b1b}
+#scoreBox{display:none;text-align:center;background:#fef3c7;border:2px solid #f59e0b;border-radius:16px;padding:18px;margin-top:16px;font-size:1.2rem;font-weight:900;color:#92400e}
+table{border-collapse:collapse;width:100%;margin:10px 0}
+th,td{border:1px solid #e7d3ae;padding:8px 10px;text-align:right}
+th{background:#fde8cd;color:#92400e}
+.video{position:relative;padding-bottom:56.25%;height:0;border-radius:14px;overflow:hidden;box-shadow:0 3px 10px rgba(0,0,0,.15);margin:10px 0}
+.video iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0}
+footer{text-align:center;color:#a1896d;font-size:.85rem;padding:20px}
+.badge{display:inline-block;background:#fde8cd;color:#92400e;border-radius:12px;padding:1px 10px;font-size:.8rem;font-weight:700;margin-inline-start:6px}
+</style>
+</head>
+<body>
+<header>
+<h1>☀️ رِجالٌ في الشَّمْس</h1>
+<p>غسان كنفاني · اللغة العربية · الصف السابع · الوحدة الخامسة · درس تفاعلي</p>
+</header>
+<nav>
+<a href="#author">الكاتب</a>
+<a href="#p1">١</a><a href="#p2">٢</a><a href="#p3">٣</a><a href="#p4">٤</a><a href="#p5">٥</a>
+<a href="#lang">لغتي</a><a href="#qs">الأسئلة</a><a href="#exam">الاختبار</a>
+</nav>
+<main>
+
+<div class="card" id="author">
+<h2>✍️ الكاتب والرواية</h2>
+<p>وُلد <b>غسان كنفاني</b> في مدينة عكا عام ١٩٣٦م، وخرج من فلسطين لاجئًا بعد <span class="w">النكبة<span class="tip">خروج الفلسطينيين من وطنهم عام ١٩٤٨م</span></span>، فعاش تجربة الغربة واللجوء بنفسه، وكتب عن شعبه ومعاناته حتى اغتيل في بيروت عام ١٩٧٢م.</p>
+<p>رواية «رجال في الشمس» صدرت عام ١٩٦٣م، وتحكي رحلة ثلاثة رجالٍ فلسطينيين (<b>أبي قيس وأسعد ومروان</b>) هربوا من الفقر إلى الكويت بحثًا عن <span class="w">لقمة العيش<span class="tip">ما يحتاجه الإنسان من طعام ومال ليحيا</span></span>، فكانت الشمس شاهدةً على رحلتهم.</p>
+<p style="margin-top:8px"><span class="badge">الشخصيات</span> أبو قيس: شيخ يحلم بأرضٍ وبرتقال · أسعد: شاب مطارد · مروان: فتى يعيل أسرته · أبو الخيزران: سائق الشاحنة.</p>
+<h3>🎬 شاهدي شرح الدرس كاملًا (فيديو قصير)</h3>
+<div class="video"><iframe src="https://www.youtube.com/embed/RQrAsThulME" title="شرح درس رجال في الشمس" allowfullscreen loading="lazy"></iframe></div>
+</div>
+
+<div class="card" id="p1">
+<h2>١ · الفقرة الأولى: الانطلاق في الصحراء</h2>
+<div class="passage">انطلقت السيارة <b>كالسهم</b> تاركةً وراءها خطًّا من غيوم الغبار، وكان أبو الخيزران ينزف عرقًا غزيرًا يصبّ في وجهه ممراتٍ متشعبةً تلتقي عند ذقنه. كانت الشمس ساطعةً <span class="w">متوهجة<span class="tip">شديدة اللمعان والحرارة</span></span>، وكان الهواء ساخنًا مشبعًا بغبارٍ دقيقٍ <b>كأنه الطحين</b>.</div>
+<div class="idea"><b>الفكرة العامة:</b> بداية الرحلة في صحراء قاسية حارّة.</div>
+<div class="idea"><b>الأفكار الجزئية:</b> ١- سرعة السيارة وغبار الطريق. ٢- تعرّق أبي الخيزران من شدة الحر. ٣- وصف الشمس والهواء الملتهب.</div>
+<div class="idea"><b>الدلالات:</b> «ينزف عرقًا»: مبالغة تدل على شدة الحر. «كالسهم»: سرعة وهروب. الغبار «كالطحين»: جوّ خانق لا يُطاق.</div>
+<div class="sim"><h4>🎨 الصور الفنية والتشبيهات</h4>«انطلقت السيارة كالسهم»: شبّه السيارة في سرعتها بالسهم (تشبيه بليغ). «غبار دقيق كأنه الطحين»: شبّه دقة الغبار بالطحين. «ممرات متشعبة تلتقي عند ذقنه»: صورة حسّية لتعرقه.</div>
+<div class="lang"><h4>🔤 لغتي</h4>
+«لم أرَ في حياتي مثل هذا الطقس»: أسلوب <b>نفي</b> بـ«لم».
+<br>«متوهجة»: ضدها <b>خافتة</b>. «غزير»: ضدها <b>قليل/شحيح</b>.
+<br>إعراب: «الشمسُ ساطعةٌ»: الشمس: مبتدأ مرفوع وعلامة رفعه الضمة؛ ساطعة: خبر مرفوع وعلامة رفعه الضمة.
+<br>استخرجي: «انطلقت» فعل <b>صحيح</b> (سالم). «ينزف» فعل <b>صحيح</b> (سالم).</div>
+</div>
+
+<div class="card" id="p2">
+<h2>٢ · الفقرة الثانية: الحوار فوق الخزان</h2>
+<div class="passage">صاح أبو الخيزران بصوتٍ عالٍ قبل أن يغلق الباب: «<b>الْبِسْ</b> قميصك يا أسعد وإلا شوتك الشمس». قال مروان لأبي الخيزران بصوتٍ <span class="w">موهن<span class="tip">ضعيف واهن</span></span>: «قل له أن يترك باب الفرن مفتوحًا علّه يَبْرُد». ضحك أبو الخيزران <span class="w">جذلًا<span class="tip">فرحًا</span></span>، ثم هدر المحرك ومضت السيارة الكبيرة ترسم في الصحراء خطًّا من الضباب يتعالى ثم يذوب في <span class="w new">القيظ<span class="tip">شدة الحر (كلمة جديدة)</span></span>.</div>
+<div class="idea"><b>الفكرة العامة:</b> حوار الرجال فوق الخزان يكشف قسوة الحر وروح الدعابة رغم التعب.</div>
+<div class="idea"><b>الأفكار الجزئية:</b> ١- نصيحة أبي الخيزران لأسعد أن يلبس قميصه. ٢- مزاح مروان بتشبيه الخزان بالفرن. ٣- ذوبان ضباب الغبار في القيظ.</div>
+<div class="idea"><b>الدلالات:</b> «باب الفرن»: تشبيه الخزان بالفرن يدل على الحر الشديد. المزاح رغم التعب يدل على صبرهم وتعوّدهم المشقة.</div>
+<div class="sim"><h4>🎨 الصور الفنية والتشبيهات</h4>«يترك باب الفرن مفتوحًا»: شبّه الخزان المغلق الحار بالفرن (استعارة/تشبيه). «ترسم خطًّا من الضباب»: صورة بصرية لأثر السيارة في الصحراء.</div>
+<div class="lang"><h4>🔤 لغتي</h4>
+«الْبِسْ قميصك»: أسلوب <b>أمر</b>، وفعل الأمر (الْبِسْ) مبني على السكون.
+<br>«قل له»: فعل <b>أمر</b> آخر.
+<br>«القيظ»: كلمة <span class="new">جديدة</span> معناها شدة الحر. «جذلًا»: ضدها <b>حزنًا</b>. «موهن»: ضدها <b>قويّ</b>.
+<br>إعراب: «صاحَ أبو الخيزران»: صاح: فعل ماضٍ مبني على الفتح؛ أبو الخيزران: فاعل مرفوع وعلامة رفعه الواو لأنه من الأسماء الخمسة.
+<br>استخرجي: «صاح» فعل <b>معتل</b> (أجوف: أصله صَيِحَ). «قال» فعل <b>معتل</b> (أجوف). «شوى» فعل <b>معتل</b> (ناقص).</div>
+</div>
+
+<div class="card" id="p3">
+<h2>٣ · الفقرة الثالثة: الصمت تحت الشمس</h2>
+<div class="passage">كانت الشمس ترتفع فوق رؤوسهم مستديرةً متوهجةً برّاقة، و<b>لم</b> يعد أحدٌ منهم يهتم بتجفيف عرقه. فرش أسعدٌ قميصه فوق رأسه وترك للشمس أن تشويه بلا مقاومة، وأمّا مروان فقد اتّكأ برأسه على كتف أبي قيس وأغمض عينيه، وكان أبو قيس يَدُقّ إلى الطريق مُطبِقًا شفتيه بإحكام. <b>لم</b> يكن أيُّ واحدٍ من الأربعة يرغب في مزيدٍ من الحديث؛ ليس لأن التعب قد أنهكهم فقط، بل لأن كلَّ واحدٍ منهم غاص في أفكاره عميقًا.</div>
+<div class="idea"><b>الفكرة العامة:</b> استسلام الرجال للشمس والصمت وانشغال كلٍّ منهم بأفكاره.</div>
+<div class="idea"><b>الأفكار الجزئية:</b> ١- اشتداد الشمس فوق الرؤوس. ٢- استسلام أسعد للشمس. ٣- نعاس مروان وصمت أبي قيس. ٤- سبب الصمت: الانغماس في الأفكار.</div>
+<div class="idea"><b>الدلالات:</b> «بلا مقاومة»: دليل الإنهاك والاستسلام. «غاص في أفكاره»: تشبيه الانشغال بالأفكار بالغوص في الماء. الصمت يمهّد لنهاية الرواية (الموت صامتين).</div>
+<div class="sim"><h4>🎨 الصور الفنية والتشبيهات</h4>«غاص في أفكاره»: استعارة مكنية شبّه الأفكار بماءٍ يُغاص فيه. «الشمس مستديرة متوهجة براقة»: صورة بصرية وحسّية للحر.</div>
+<div class="lang"><h4>🔤 لغتي</h4>
+«لم يعد أحدٌ منهم يهتم»: أسلوب <b>نفي</b> بلم + فعل مضارع مجزوم.
+<br>«لم يكن أيُّ واحدٍ يرغب»: <b>نفي</b> آخر.
+<br>«أغمض»: ضدها <b>فتح/أبصر</b>. «بلا مقاومة»: عكسها <b>بمقاومة</b>.
+<br>إعراب: «غاصَ في أفكاره»: غاص: فعل ماضٍ؛ في أفكاره: جار ومجرور متعلقان بغاص.
+<br>استخرجي: «غاص» فعل <b>معتل</b> (أجوف واوي). «فرش» فعل <b>صحيح</b> (سالم). «اتّكأ» فعل <b>معتل</b> (ناقص).</div>
+</div>
+
+<div class="card" id="p4">
+<h2>٤ · الفقرة الرابعة: الأحلام والذكريات</h2>
+<div class="passage">كانت السيارة الضخمة تشقّ الطريق بهم وبأحلامهم وعائلاتهم و<span class="w">مطامحهم<span class="tip">طموحاتهم وآمالهم</span></span> وآمالهم وبؤسهم ويأسهم وقوّتهم وضعفهم وماضيهم ومستقبلهم. وكان أبو قيس يقول في نفسه: سوف يكون بوسعنا أن نعلّم قيسًا، وأن نشتري <span class="w">عرقَ زيتونٍ<span class="tip">شجرة زيتون أصلية</span></span> أو عرقين، وربما نبني غرفةً نسكنها وتكون لنا.</div>
+<div class="idea"><b>الفكرة العامة:</b> الرحلة تحمل أحلام الرجال وذكرياتهم، وحلم أبي قيس البسيط: تعليم ابنه وشجرة زيتون وبيت.</div>
+<div class="idea"><b>الأفكار الجزئية:</b> ١- السيارة تحمل الرجال وأحلامهم وهمومهم معًا. ٢- حلم أبي قيس بتعليم ابنه قيس. ٣- حلمه بشراء زيتون وبناء غرفة.</div>
+<div class="idea"><b>الدلالات:</b> عطف الأضداد (بؤسهم ويأسهم وقوتهم وضعفهم) يدل على تضارب المشاعر. حلم أبي قيس البسيط يدل على حاجة اللاجئ وكرامته؛ والزيتون رمز الأرض والوطن.</div>
+<div class="sim"><h4>🎨 الصور الفنية والتشبيهات</h4>«تشق الطريق بهم وبأحلامهم»: استعارة مكنية؛ جعل الأحلام شيئًا محسوسًا تُحمَل في السيارة. «نطح باب جبّار لقدرٍ جديد مجهول»: تشبيه المستقبل المجهول ببابٍ جبّار.</div>
+<div class="lang"><h4>🔤 لغتي</h4>
+«لماذا لا تحاول مثلنا؟»: أسلوب <b>نهي</b> بلا الناهية (في الرواية: «لماذا لا تنهض...»).
+<br>«مطامحهم»: جمع <span class="new">مطمَح</span> = الطموح. ضد «البؤس»: <b>النعيم/الرفاه</b>. ضد «اليأس»: <b>الأمل</b>.
+<br>إعراب: «سوفَ يكونُ بوسعنا»: سوف: حرف استقبال؛ يكون: فعل مضارع ناقص مرفوع وعلامة رفعه الضمة؛ اسم يكون ضمير مستتر.
+<br>استخرجي: «نسكن» فعل <b>صحيح</b> (سالم). «نشتري» فعل <b>معتل</b> (ناقص: اشترى). «يبني» فعل <b>معتل</b> (ناقص).</div>
+</div>
+
+<div class="card" id="p5">
+<h2>٥ · الفقرة الخامسة: الشمس القاتلة</h2>
+<div class="passage">الشمس في وسط السماء ترسم فوق الصحراء قبّةً عريضةً من <span class="w">لهبٍ<span class="tip">نار شديدة</span></span> أبيض، وشريطُ الغبار يعكس <span class="w">وهجًا<span class="tip">ضوءًا وحرارة شديدة</span></span> يكاد يعمي العيون. كانوا يقولون لهم إن فلانًا لم يعد من الكويت لأنه مات؛ قتلته <b>ضربة شمس</b>. كأن هذا الخلاء عملاقٌ خفيٌّ <span class="w">يجلد<span class="tip">يضرب بسوط</span></span> رؤوسهم بسياطٍ من نارٍ و<span class="w">وقارٍ مغليّ<span class="tip">قطران مغليّ</span></span>.</div>
+<div class="idea"><b>الفكرة العامة:</b> اشتداد خطر الشمس حتى صارت قاتلة، وتهديدها حياة الرجال وأحلامهم.</div>
+<div class="idea"><b>الأفكار الجزئية:</b> ١- وصف الشمس قبّةً من لهبٍ أبيض. ٢- قصة من مات بضربة شمس. ٣- تصوير الصحراء عملاقًا يجلد الرؤوس.</div>
+<div class="idea"><b>الدلالات:</b> «ضربة شمس»: الشمس صارت خصمًا يضرب ويقتل. العملاق الخفي: الصحراء والقدر معًا يهدّدان الرجال. هذه الفقرة تنبئ بالنهاية: الموت تحت الشمس.</div>
+<div class="sim"><h4>🎨 الصور الفنية والتشبيهات</h4>«قبة عريضة من لهب أبيض»: استعارة مكنية شبّه الشمس بقبة نار. «عملاق خفي يجلد رؤوسهم بسياط من نار وقار مغلي»: استعارة مكنية شبّه الخلاء بعملاقٍ يجلد، والشمس بسياط نار — من أقوى صور الرواية.</div>
+<div class="lang"><h4>🔤 لغتي</h4>
+«لم يعد من الكويت»: أسلوب <b>نفي</b> بلم.
+<br>«يعمي»: ضدها <b>يبصر/ينير</b>. «خفيّ»: ضدها <b>ظاهر/جليّ</b>.
+<br>إعراب: «ترسمُ فوقَ الصحراءِ قبّةً»: ترسم: فعل مضارع مرفوع؛ فوق الصحراء: جار ومجرور؛ قبّةً: مفعول به منصوب وعلامة نصبه الفتحة.
+<br>استخرجي: «ترسم» فعل <b>صحيح</b> (سالم). «يعمي» فعل <b>معتل</b> (ناقص: عَمِيَ). «يجلد» فعل <b>صحيح</b> (سالم).</div>
+</div>
+
+<div class="card" id="lang">
+<h2>📚 ملحق لغتي: كل ما جمعناه</h2>
+<h3>المعاني والأضداد</h3>
+<table>
+<tr><th>الكلمة</th><th>معناها</th><th>ضدها</th></tr>
+<tr><td class="new">القيظ</td><td>شدة الحر</td><td>البرد الشديد</td></tr>
+<tr><td class="new">يزدرد</td><td>يبتلع</td><td>يلفظ/يبصق</td></tr>
+<tr><td class="new">صخب</td><td>اختلاط الأصوات</td><td>هدوء</td></tr>
+<tr><td class="new">الدورية</td><td>جماعة الحرس</td><td>—</td></tr>
+<tr><td class="new">العضد</td><td>ما بين المرفق والكتف</td><td>—</td></tr>
+<tr><td class="new">ملطّخ</td><td>ملوّث</td><td>نظيف</td></tr>
+<tr><td class="new">هنيهة</td><td>مدة قصيرة</td><td>دهر طويل</td></tr>
+<tr><td>متوهجة</td><td>شديدة اللمعان والحر</td><td>خافتة</td></tr>
+<tr><td>موهن</td><td>ضعيف واهن</td><td>قويّ</td></tr>
+<tr><td>جذلًا</td><td>فرحًا</td><td>حزنًا</td></tr>
+<tr><td>مطامح</td><td>طموحات وآمال</td><td>—</td></tr>
+<tr><td>وهج</td><td>ضوء وحرارة شديدة</td><td>ظلمة</td></tr>
+<tr><td>يجلد</td><td>يضرب بسوط</td><td>يربّت/يلاطف</td></tr>
+</table>
+<h3>الأساليب اللغوية في الدرس</h3>
+<table>
+<tr><th>الأسلوب</th><th>مثال من الدرس</th></tr>
+<tr><td>أمر</td><td>«الْبِسْ قميصك يا أسعد» · «قلْ له»</td></tr>
+<tr><td>نهي</td><td>«لماذا لا تحاول مثلنا؟» (لا الناهية)</td></tr>
+<tr><td>نفي</td><td>«لم يعد أحد منهم يهتم» · «لم يكن أيُّ واحدٍ يرغب» · «لم يعد من الكويت»</td></tr>
+</table>
+<h3>الفعل الصحيح والمعتل</h3>
+<table>
+<tr><th>صحيح</th><th>معتل</th></tr>
+<tr><td>انطلقت، ينزف، فرش، ترسم، يجلد، نسكن</td><td>صاح (أجوف)، قال (أجوف)، شوى (ناقص)، غاص (أجوف)، اتّكأ (ناقص)، نشتري (ناقص)، يبني (ناقص)، يعمي (ناقص)</td></tr>
+</table>
+</div>
+
+<div class="card" id="qs">
+<h2>❓ أسئلة الدرس بإجاباتها</h2>
+<div class="q">١- ماذا كان يحلم أبو قيس؟<button class="rev" onclick="this.nextElementSibling.classList.toggle('open')">أظهري الإجابة</button><div class="ans">كان يحلم بتعليم ابنه قيس، وشراء عرق زيتون أو عرقين، وبناء غرفة يسكنها مع أسرته.</div></div>
+<div class="q">٢- لماذا لبس أسعد قميصه بنصيحة أبي الخيزران؟<button class="rev" onclick="this.nextElementSibling.classList.toggle('open')">أظهري الإجابة</button><div class="ans">حتى لا تشوي الشمس جلده؛ فالشمس كانت متوهجة حارقة.</div></div>
+<div class="q">٣- علّلي: صمت الرجال الأربعة في السيارة.<button class="rev" onclick="this.nextElementSibling.classList.toggle('open')">أظهري الإجابة</button><div class="ans">ليس لأن التعب أنهكهم فقط، بل لأن كل واحد منهم غاص في أفكاره وذكرياته وأحلامه.</div></div>
+<div class="q">٤- ما دلالة قول مروان «قل له أن يترك باب الفرن مفتوحًا»؟<button class="rev" onclick="this.nextElementSibling.classList.toggle('open')">أظهري الإجابة</button><div class="ans">شبّه الخزان بالفرن من شدة الحر؛ مزحة تدل على قسوة الجو داخل الخزان.</div></div>
+<div class="q">٥- وضّحي الصورة الفنية في: «عملاق خفي يجلد رؤوسهم بسياط من نار وقار مغلي».<button class="rev" onclick="this.nextElementSibling.classList.toggle('open')">أظهري الإجابة</button><div class="ans">استعارة مكنية: شبّه الخلاء (الصحراء) بعملاق خفي يضربهم بالسياط، والشمس الحارقة بسياط من نار وقطران مغلي؛ لتصوير شدة الألم والحر.</div></div>
+<div class="q">٦- ما رمز الشمس في الرواية؟<button class="rev" onclick="this.nextElementSibling.classList.toggle('open')">أظهري الإجابة</button><div class="ans">الشمس رمز المعاناة والقسوة والقدر الذي يراقب الرجال، وهي شاهدة على رحلتهم وموتهم.</div></div>
+<div class="q">٧- اذكري مثالًا على أسلوب أمرٍ وآخر على نفيٍ من الدرس.<button class="rev" onclick="this.nextElementSibling.classList.toggle('open')">أظهري الإجابة</button><div class="ans">أمر: «الْبِسْ قميصك يا أسعد». نفي: «لم يعد أحد منهم يهتم بتجفيف عرقه».</div></div>
+<div class="q">٨- استخرجي من الدرس فعلًا معتلًا وحدّدي نوعه.<button class="rev" onclick="this.nextElementSibling.classList.toggle('open')">أظهري الإجابة</button><div class="ans">«قال» فعل معتل أجوف (حرف العلة في الوسط)، أو «شوى/يبني/يعمي» فعل معتل ناقص (حرف العلة في الآخر).</div></div>
+</div>
+
+<div class="card" id="exam">
+<h2>📝 الاختبار الإلكتروني</h2>
+<p>اختاري الإجابة الصحيحة، ثم اضغطي «أظهري علامتي» في الأسفل.</p>
+<div id="quiz"></div>
+<button class="rev" style="font-size:1.05rem;padding:10px 22px" onclick="grade()">أظهري علامتي 🏁</button>
+<div id="scoreBox"></div>
+</div>
+
+</main>
+<footer>إعداد: المعلمة شروق مقنصة · مدرسة ياسر عرفات الثانوية للبنات · اللغة العربية · الصف السابع · ٢٠٢٦<br>هذا العمل مرخّص بموجب CC BY-NC-ND 4.0</footer>
+<script>
+const QUIZ=[
+{q:'ما معنى كلمة «القيظ»؟',o:['البرد الشديد','شدة الحر','شدة الغبار','العطش'],a:1},
+{q:'«يزدرد» تعني:',o:['يلفظ','يمضغ ببطء','يبتلع','يرمي'],a:2},
+{q:'«الْبِسْ قميصك يا أسعد» أسلوب:',o:['نهي','نفي','استفهام','أمر'],a:3},
+{q:'«لم يعد أحد منهم يهتم بتجفيف عرقه» أسلوب:',o:['نفي','أمر','نداء','تعجب'],a:0},
+{q:'شبّه مروان الخزانَ بـ:',o:['القبر','الفرن','السجن','السفينة'],a:1},
+{q:'«عملاق خفي يجلد رؤوسهم بسياط من نار» نوع الصورة:',o:['تشبيه بليغ','استعارة مكنية','كناية عن صفة','تشبيه مجمل'],a:1},
+{q:'أيّ الأفعال الآتية معتل؟',o:['انطلقت','فرش','قال','ترسم'],a:2},
+{q:'ضد كلمة «جذلًا»:',o:['فرحًا','حزنًا','غضبًا','خوفًا'],a:1},
+{q:'حلم أبو قيس أن يشتري:',o:['بيتًا كبيرًا','عرق زيتون أو عرقين','سيارة','متجرًا'],a:1},
+{q:'الشمس في الرواية ترمز إلى:',o:['الأمل','الربيع','المعاناة والقسوة','المال'],a:2}
+];
+const box=document.getElementById('quiz');
+QUIZ.forEach((it,i)=>{
+ const d=document.createElement('div');d.className='q';
+ d.innerHTML='<b>'+(i+1)+'- '+it.q+'</b>';
+ it.o.forEach((op,j)=>{
+  const b=document.createElement('button');b.className='opt';b.textContent=op;
+  b.onclick=()=>{d.querySelectorAll('.opt').forEach(x=>{x.classList.remove('correct','wrong');x.dataset.picked=''});
+   b.dataset.picked='1';
+   b.classList.add(j===it.a?'correct':'wrong');
+   if(j!==it.a){d.querySelectorAll('.opt')[it.a].classList.add('correct');}};
+  d.appendChild(b);});
+ box.appendChild(d);});
+function grade(){
+ let s=0;
+ document.querySelectorAll('#quiz .q').forEach(d=>{
+  d.querySelectorAll('.opt').forEach(x=>{if(x.dataset.picked==='1'&&x.classList.contains('correct'))s++;});});
+ const sb=document.getElementById('scoreBox');sb.style.display='block';
+ const msg=s>=9?'ممتازة! 🏆':s>=7?'جيدة جدًا! 🌟':s>=5?'جيدة، راجعي الدرس مرة أخرى 💪':'أعيدي قراءة الدرس وحاولي من جديد 🌱';
+ sb.innerHTML='علامتك: '+s+' من '+QUIZ.length+'<br>'+msg;}
+document.querySelectorAll('.w').forEach(w=>{w.addEventListener('click',e=>{e.stopPropagation();
+ document.querySelectorAll('.w.open').forEach(x=>{if(x!==w)x.classList.remove('open')});
+ w.classList.toggle('open');});});
+document.addEventListener('click',()=>{document.querySelectorAll('.w.open').forEach(x=>x.classList.remove('open'));});
+</script>
+</body>
+</html>
