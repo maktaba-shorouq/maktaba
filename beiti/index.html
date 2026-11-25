@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#c2613a">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="بيتي">
+<link rel="apple-touch-icon" href="icon-192.png">
+<title>بيتي — أغراض البيت</title>
+<style>
+  :root{
+    --bg:#fdf8f2; --card:#ffffff; --ink:#3b2f2f; --muted:#8a7b72;
+    --accent:#c2613a; --accent-soft:#f6e3d8; --green:#4a8f5d; --line:#eee2d8;
+  }
+  *{box-sizing:border-box; -webkit-tap-highlight-color:transparent;}
+  body{margin:0; font-family:"Segoe UI", Tahoma, Arial, sans-serif; background:var(--bg); color:var(--ink);}
+  header{background:linear-gradient(135deg,#c2613a,#a44d2c); color:#fff; padding:18px 16px 14px; position:sticky; top:0; z-index:10; box-shadow:0 2px 8px rgba(0,0,0,.15);}
+  header h1{margin:0; font-size:22px;}
+  header p{margin:4px 0 0; font-size:13px; opacity:.9;}
+  .tabs{display:flex; gap:8px; margin-top:12px;}
+  .tab{flex:1; text-align:center; padding:9px 0; border-radius:20px; background:rgba(255,255,255,.18); color:#fff; font-size:14px; border:none; cursor:pointer; font-family:inherit;}
+  .tab.active{background:#fff; color:var(--accent); font-weight:bold;}
+  main{padding:14px 14px 90px;}
+  .grid{display:grid; grid-template-columns:1fr 1fr; gap:10px;}
+  .cat{background:var(--card); border:1px solid var(--line); border-radius:14px; padding:14px 10px; text-align:center; cursor:pointer; position:relative;}
+  .cat .emoji{font-size:30px; display:block; margin-bottom:6px;}
+  .cat .name{font-size:15px; font-weight:bold;}
+  .cat .count{position:absolute; top:8px; left:8px; background:var(--accent); color:#fff; font-size:11px; border-radius:12px; padding:2px 8px; display:none;}
+  .cat .count.show{display:inline-block;}
+  .back{background:none; border:none; color:var(--accent); font-size:15px; cursor:pointer; padding:6px 0 10px; font-family:inherit;}
+  h2{font-size:18px; margin:4px 0 10px;}
+  .hint{font-size:12px; color:var(--muted); margin:0 0 10px;}
+  .item{display:flex; align-items:center; gap:10px; background:var(--card); border:1px solid var(--line); border-radius:12px; padding:11px 12px; margin-bottom:8px;}
+  .item label{flex:1; font-size:15px; cursor:pointer;}
+  .item input[type=checkbox]{width:22px; height:22px; accent-color:var(--accent); cursor:pointer; flex-shrink:0;}
+  .item.checked{background:var(--accent-soft); border-color:var(--accent);}
+  .item.checked label{font-weight:bold;}
+  .item .del{background:none; border:none; color:#c9a; font-size:17px; cursor:pointer; padding:2px 6px;}
+  .adder{display:flex; gap:8px; margin:12px 0;}
+  .adder input{flex:1; padding:11px 12px; border:1px solid var(--line); border-radius:12px; font-size:15px; font-family:inherit; background:#fff;}
+  .adder button{background:var(--accent); color:#fff; border:none; border-radius:12px; padding:0 18px; font-size:22px; cursor:pointer;}
+  .shopgroup{margin-bottom:16px;}
+  .shopgroup h3{font-size:15px; color:var(--accent); margin:0 0 6px; border-bottom:1px solid var(--line); padding-bottom:4px;}
+  .shopitem{display:flex; align-items:center; gap:10px; padding:8px 4px; border-bottom:1px dashed var(--line); font-size:15px;}
+  .shopitem input[type=checkbox]{width:20px; height:20px; accent-color:var(--green);}
+  .shopitem.done label{text-decoration:line-through; color:var(--muted);}
+  .shopitem label{flex:1; cursor:pointer;}
+  .empty{text-align:center; color:var(--muted); padding:40px 20px; font-size:15px; line-height:1.9;}
+  .actions{position:fixed; bottom:0; right:0; left:0; display:flex; gap:8px; padding:10px 14px; background:rgba(253,248,242,.97); border-top:1px solid var(--line);}
+  .actions button{flex:1; padding:12px 0; border-radius:12px; border:none; font-size:14px; cursor:pointer; font-family:inherit; font-weight:bold;}
+  .btn-copy{background:var(--green); color:#fff;}
+  .btn-clear{background:#fff; color:var(--accent); border:1px solid var(--accent) !important;}
+  .toast{position:fixed; bottom:76px; right:50%; transform:translateX(50%); background:var(--ink); color:#fff; padding:9px 20px; border-radius:20px; font-size:13px; opacity:0; transition:opacity .3s; pointer-events:none; z-index:20;}
+  .toast.show{opacity:1;}
+</style>
+</head>
+<body>
+<header>
+  <h1>🏠 بيتي — أغراض البيت</h1>
+  <p>من الإبرة للصاروخ — علّمي اللي ناقصك وبتتجمّع بقائمة التسوق</p>
+  <div class="tabs">
+    <button class="tab active" id="tabCats" onclick="showView('cats')">الفئات</button>
+    <button class="tab" id="tabShop" onclick="showView('shop')">🛒 قائمة التسوق <span id="shopBadge"></span></button>
+  </div>
+</header>
+<main>
+  <div id="viewCats"><div class="grid" id="catsGrid"></div></div>
+  <div id="viewCat" style="display:none">
+    <button class="back" onclick="showView('cats')">→ رجوع للفئات</button>
+    <h2 id="catTitle"></h2>
+    <p class="hint">علّمي على اللي بدك تشتريه، وبينضاف لقائمة التسوق.</p>
+    <div id="catItems"></div>
+    <div class="adder">
+      <input type="text" id="newItem" placeholder="ضيفي غرض من عندك...">
+      <button onclick="addItem()" title="إضافة">+</button>
+    </div>
+  </div>
+  <div id="viewShop" style="display:none">
+    <div id="shopList"></div>
+  </div>
+</main>
+<div class="actions" id="shopActions" style="display:none">
+  <button class="btn-copy" onclick="copyList()">📋 نسخ القائمة</button>
+  <button class="btn-clear" onclick="clearBought()">✔ خلصت المشريات</button>
+</div>
+<div class="toast" id="toast"></div>
+
+<script>
+const DEFAULTS = [
+ {id:"kitchen", emoji:"🍳", name:"المطبخ", items:["رز","سكر","ملح","طحين","زيت","سمنة","معكرونة","عدس","فول","حمص","شاي","قهوة","بهارات","خل","صلصة","معلبات","بسكويت","حليب","لبنة","جبنة","بيض","خبز","خميرة","ماء","عصير","مناديل مطبخ","إسفنج غسيل","سائل جلي","أكياس نايلون","قصدير (ألمنيوم)","نايلون لاصق","أطباق","أكواب","ملاعق وسكاكين","طنجرة","مقلاية","صينية فرن","مصفاة","لوح تقطيع","مبشرة","سكينة مطبخ","قفازات فرن","ممسحة أطباق"]},
+ {id:"veg", emoji:"🥬", name:"خضار وفواكه", items:["بندورة","خيار","بطاطا","بصل","ثوم","ليمون","جزر","كوسا","باذنجان","فليفلة","خس","بقدونس","نعنع","موز","تفاح","برتقال","عنب","فراولة","دجاج","لحمة","سمك"]},
+ {id:"clean", emoji:"🧹", name:"التنظيف", items:["مسحوق غسيل","منعّم ملابس","كلور","مطهّر أرضيات","سائل تنظيف زجاج","معقم","ممسحة","دلو","مكنسة","جاروف","قطع قماش تنظيف","قفازات تنظيف","معطر جو","سلة مهملات","أكياس زبالة","مبيد حشرات","مصيدة ذباب","منظف فرن","ملمع أثاث"]},
+ {id:"bath", emoji:"🛁", name:"الحمام والعناية", items:["صابون","شامبو","بلسم","غسول وجه","معجون أسنان","فرشاة أسنان","خيط أسنان","معجون حلاقة","شفرات","مناديل ورقية","ورق تواليت","مناديل مبللة","كريم يدين","مرطب جسم","مزيل عرق","عطر","مكياج","قطن أذن","شاش ولاصق طبي","مقص أظافر","مناشف","فرشاة شعر","صبغة شعر"]},
+ {id:"laundry", emoji:"🧺", name:"الغسيل", items:["مسحوق غسيل","مبيّض","منعّم","مشابك غسيل","حبل غسيل","سلة غسيل","مكواة","طاولة كي","نشادر (نشا)","منظف بقع"]},
+ {id:"electric", emoji:"💡", name:"كهرباء وإضاءة", items:["لمبات","بطاريات AA","بطاريات AAA","شاحن","وصلة كهرباء","فيشة","كابل تمديد","شريط لاصق كهربائي (شيرتون)","كشاف","شموع","ولاعة","فيوز","مفك فحص الكهربا"]},
+ {id:"tools", emoji:"🔧", name:"أدوات وصيانة", items:["مطرقة","مفك عادي","مفك صليبة","كماشة","مفاتيح ربط","براغي","مسامير","دباسة ودبابيس","شريط لاصق قوي","غراء","سيليكون","حبل","سلم","إبر وخيط","أزرار","سحّابات","مقص","شفرة كتر","مسطرة","مثقاب (دريل)","قطع دريل","ولاعة غاز","فوانين"]},
+ {id:"pharmacy", emoji:"💊", name:"الصيدلية", items:["بانادول","مسكن ألم","خافض حرارة","شراب سعال","فيتامينات","مرهم حروق","لاصق جروح","شاش معقم","كحول طبي","مقياس حرارة","قطرة عيون","أملاح إماهة","حبوب حساسية","كمامات"]},
+ {id:"school", emoji:"🎒", name:"مدرسة ومكتبة", items:["دفاتر","أقلام رصاص","أقلام حبر","ممحاة","مبراة","ألوان","أقلام تخطيط","مسطرة","آلة حاسبة","حقيبة مدرسية","لانش بوكس","قارورة ماء","ورق طباعة","لاصق","دباسة","مقلمة","ورق مقوى ملون","جلاد دفاتر"]},
+ {id:"bedroom", emoji:"🛏️", name:"غرفة النوم والمفروشات", items:["شراشف","أغطية","وسائد","فرشات وجه","بطانية","حافظة لحاف","علاقات ملابس","منظم أدراج","سجادة","ستائر","مرآة","ساعة منبه"]},
+ {id:"kids", emoji:"🧸", name:"الأطفال", items:["حفاضات","مناديل أطفال","كريم حفاضات","حليب أطفال","رضاعة","ملعقة أطفال","لهاية","ألعاب","قصص أطفال","ملابس أطفال","مرايل"]},
+ {id:"car", emoji:"🚗", name:"السيارة", items:["ماء رادياتير","زيت سيارة","مناديل سيارة","معقم سيارة","شاحن سيارة","حامل موبايل","إسفنجة غسيل","منظف زجاج سيارة","عطر سيارة","إطار احتياطي"]},
+ {id:"occasions", emoji:"🎉", name:"مناسبات وضيافة", items:["أكواب كرتون","أطباق كرتون","شوك وملاعق بلاستيك","مناديل سفرة","مفرش سفرة","شموع عيد ميلاد","بالونات","هدايا","ورق تغليف","قهوة عربية","شاي ضيافة","حلويات","مكسرات","تمر"]},
+ {id:"misc", emoji:"📦", name:"متفرقات", items:["مظلة","حقيبة تسوق","قفل","مفاتيح احتياطية","بطارية ساعة","نظارة قراءة","دفتر ملاحظات","طوب (طابوق) صغير للحديقة","سماد نباتات","أصص زرع","أكل قطط/كلاب","رمل قطط","أدوية طوارئ للبيت","طفاية حريق صغيرة","كشاف طوارئ"]},
+];
+const KEY = "beiti_v1";
+let state = load();
+function load(){
+  try{ const s = JSON.parse(localStorage.getItem(KEY)); if(s && s.checked && s.custom) return s; }catch(e){}
+  return {checked:{}, custom:{}, bought:{}};
+}
+function save(){ localStorage.setItem(KEY, JSON.stringify(state)); }
+let view = "cats", currentCat = null;
+
+function catById(id){ return DEFAULTS.find(c=>c.id===id); }
+function itemsOf(id){ return catById(id).items.concat(state.custom[id]||[]); }
+function markedCount(id){ return itemsOf(id).filter(n=>state.checked[id+"|"+n]).length; }
+function totalMarked(){ return DEFAULTS.reduce((s,c)=>s+markedCount(c.id),0); }
+
+function showView(v, catId){
+  view = v;
+  if(catId) currentCat = catId;
+  document.getElementById("viewCats").style.display = v==="cats" ? "block":"none";
+  document.getElementById("viewCat").style.display = v==="cat" ? "block":"none";
+  document.getElementById("viewShop").style.display = v==="shop" ? "block":"none";
+  document.getElementById("shopActions").style.display = v==="shop" ? "flex":"none";
+  document.getElementById("tabCats").className = "tab"+(v==="shop"?"":" active");
+  document.getElementById("tabShop").className = "tab"+(v==="shop"?" active":"");
+  render();
+  window.scrollTo(0,0);
+}
+
+function render(){
+  const n = totalMarked();
+  document.getElementById("shopBadge").textContent = n ? "("+n+")" : "";
+  if(view==="cats"){
+    const g = document.getElementById("catsGrid");
+    g.innerHTML = "";
+    DEFAULTS.forEach(c=>{
+      const d = document.createElement("div");
+      d.className = "cat";
+      d.onclick = ()=>showView("cat", c.id);
+      const cnt = markedCount(c.id);
+      d.innerHTML = `<span class="count${cnt?" show":""}">${cnt}</span><span class="emoji">${c.emoji}</span><span class="name">${c.name}</span>`;
+      g.appendChild(d);
+    });
+  } else if(view==="cat"){
+    const c = catById(currentCat);
+    document.getElementById("catTitle").textContent = c.emoji+" "+c.name;
+    const wrap = document.getElementById("catItems");
+    wrap.innerHTML = "";
+    const custom = state.custom[currentCat]||[];
+    c.items.concat(custom).forEach(name=>{
+      const key = currentCat+"|"+name;
+      const d = document.createElement("div");
+      d.className = "item"+(state.checked[key]?" checked":"");
+      const isCustom = custom.includes(name);
+      d.innerHTML = `<input type="checkbox" id="cb_${key}" ${state.checked[key]?"checked":""}><label for="cb_${key}">${name}</label>${isCustom?'<button class="del" title="حذف">🗑</button>':""}`;
+      d.querySelector("input").onchange = e=>{ state.checked[key]=e.target.checked; if(!e.target.checked) delete state.checked[key]; save(); d.classList.toggle("checked", e.target.checked); };
+      const del = d.querySelector(".del");
+      if(del) del.onclick = ()=>{
+        state.custom[currentCat] = state.custom[currentCat].filter(x=>x!==name);
+        delete state.checked[key];
+        save(); render();
+      };
+      wrap.appendChild(d);
+    });
+  } else if(view==="shop"){
+    const wrap = document.getElementById("shopList");
+    wrap.innerHTML = "";
+    let any = false;
+    DEFAULTS.forEach(c=>{
+      const names = itemsOf(c.id).filter(n=>state.checked[c.id+"|"+n]);
+      if(!names.length) return;
+      any = true;
+      const g = document.createElement("div");
+      g.className = "shopgroup";
+      g.innerHTML = `<h3>${c.emoji} ${c.name}</h3>`;
+      names.forEach(name=>{
+        const key = c.id+"|"+name;
+        const row = document.createElement("div");
+        const done = !!state.bought[key];
+        row.className = "shopitem"+(done?" done":"");
+        row.innerHTML = `<input type="checkbox" id="sb_${key}" ${done?"checked":""}><label for="sb_${key}">${name}</label>`;
+        row.querySelector("input").onchange = e=>{ state.bought[key]=e.target.checked; if(!e.target.checked) delete state.bought[key]; save(); row.classList.toggle("done", e.target.checked); };
+        g.appendChild(row);
+      });
+      wrap.appendChild(g);
+    });
+    if(!any){
+      wrap.innerHTML = `<div class="empty">🛒<br>قائمتك فاضية لسا.<br>ارجعي للفئات وعلّمي على اللي ناقصك.</div>`;
+    }
+  }
+}
+
+function addItem(){
+  const inp = document.getElementById("newItem");
+  const name = inp.value.trim();
+  if(!name) return;
+  if(!state.custom[currentCat]) state.custom[currentCat] = [];
+  if(itemsOf(currentCat).includes(name)){ toast("هالغرض موجود أصلاً"); return; }
+  state.custom[currentCat].push(name);
+  state.checked[currentCat+"|"+name] = true;
+  save(); inp.value = ""; render();
+  toast("انضاف وانعلّم ✔");
+}
+
+function copyList(){
+  let lines = ["🛒 قائمة التسوق:"];
+  DEFAULTS.forEach(c=>{
+    const names = itemsOf(c.id).filter(n=>state.checked[c.id+"|"+n] && !state.bought[c.id+"|"+n]);
+    if(names.length) lines.push("", c.emoji+" "+c.name+":", ...names.map(n=>"• "+n));
+  });
+  const text = lines.join("\n");
+  const done = ()=>toast("انحفظت القائمة، الصقيها وين ما بدك 📋");
+  if(navigator.clipboard && navigator.clipboard.writeText){
+    navigator.clipboard.writeText(text).then(done).catch(()=>fallbackCopy(text, done));
+  } else fallbackCopy(text, done);
+}
+function fallbackCopy(text, done){
+  const ta = document.createElement("textarea");
+  ta.value = text; document.body.appendChild(ta); ta.select();
+  try{ document.execCommand("copy"); done(); }catch(e){ toast("ما قدرت أنسخ، جربي تعلّمي يدوي"); }
+  document.body.removeChild(ta);
+}
+
+function clearBought(){
+  let n = 0;
+  Object.keys(state.bought).forEach(k=>{ if(state.bought[k] && state.checked[k]){ delete state.checked[k]; n++; } });
+  state.bought = {};
+  save(); render();
+  toast(n ? "شلت "+n+" غرض من القائمة ✔" : "ما في أغراض متعلّمة كمشتراة");
+}
+
+function toast(msg){
+  const t = document.getElementById("toast");
+  t.textContent = msg; t.classList.add("show");
+  setTimeout(()=>t.classList.remove("show"), 1800);
+}
+
+document.getElementById("newItem").addEventListener("keydown", e=>{ if(e.key==="Enter") addItem(); });
+render();
+</script>
+<script>
+if('serviceWorker' in navigator){ navigator.serviceWorker.register('sw.js').catch(function(){}); }
+</script>
+</body>
+</html>
