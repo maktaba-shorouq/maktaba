@@ -1,0 +1,14 @@
+{
+ "name": "مكتبة المعلمة شروق مقنصة",
+ "short_name": "مكتبتي",
+ "dir": "rtl",
+ "lang": "ar",
+ "start_url": "./",
+ "scope": "./",
+ "display": "standalone",
+ "background_color": "#FAF7FE",
+ "theme_color": "#5B21B6",
+ "icons": [
+  {"src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any"}
+ ]
+}
