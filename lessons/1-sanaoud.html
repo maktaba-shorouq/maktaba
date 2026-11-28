@@ -1,0 +1,1007 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>درس تفاعلي: قصيدة سنعود | المعلمة شروق مقنصه</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap');
+
+    :root {
+      --green: #1b5e20;
+      --green-light: #2e7d32;
+      --green-soft: #e8f5e9;
+      --red: #b71c1c;
+      --red-soft: #ffebee;
+      --gold: #d97706;
+      --gold-soft: #fef3c7;
+      --dark: #1e293b;
+      --muted: #64748b;
+      --bg: #f8fafc;
+      --white: #ffffff;
+      --shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
+      --radius: 18px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Cairo', 'Segoe UI', Tahoma, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #f0fdf4 0%, #f8fafc 50%, #fef2f2 100%);
+      color: var(--dark);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* الشريط العلوي */
+    .flag-bar {
+      height: 8px;
+      background: linear-gradient(to left, #000000 25%, #ffffff 25%, #ffffff 50%, #1b5e20 50%, #1b5e20 75%, #b71c1c 75%);
+    }
+
+    header {
+      background: var(--white);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      padding: 16px 24px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header-inner {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .title-group h1 {
+      font-size: 1.5rem;
+      color: var(--green);
+      font-weight: 800;
+    }
+
+    .title-group p {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .hud {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .badge {
+      background: var(--gold-soft);
+      color: #92400e;
+      padding: 8px 16px;
+      border-radius: 999px;
+      font-weight: 800;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .btn-outline {
+      background: var(--white);
+      border: 2px solid var(--green);
+      color: var(--green);
+      padding: 7px 14px;
+      border-radius: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: 0.2s;
+      font-size: 0.9rem;
+    }
+
+    .btn-outline:hover {
+      background: var(--green);
+      color: var(--white);
+    }
+
+    /* شريط المراحل */
+    .stepper {
+      max-width: 1000px;
+      margin: 22px auto 0;
+      padding: 0 20px;
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+
+    .step-pill {
+      background: var(--white);
+      border: 2px solid #e2e8f0;
+      border-radius: 14px;
+      padding: 12px;
+      text-align: center;
+      font-weight: 700;
+      color: var(--muted);
+      cursor: pointer;
+      transition: 0.25s;
+      font-size: 0.95rem;
+    }
+
+    .step-pill.active {
+      border-color: var(--green);
+      background: var(--green);
+      color: var(--white);
+      box-shadow: 0 6px 16px rgba(27, 94, 32, 0.22);
+    }
+
+    .step-pill.done {
+      border-color: var(--green-light);
+      background: var(--green-soft);
+      color: var(--green);
+    }
+
+    /* المحتوى الرئيسي */
+    main {
+      max-width: 1000px;
+      width: 100%;
+      margin: 22px auto;
+      padding: 0 20px;
+      flex: 1;
+    }
+
+    .card {
+      background: var(--white);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 28px;
+      animation: fadeIn 0.35s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .stage-title {
+      font-size: 1.35rem;
+      color: var(--dark);
+      margin-bottom: 6px;
+      font-weight: 800;
+    }
+
+    .stage-desc {
+      color: var(--muted);
+      margin-bottom: 22px;
+      font-size: 1rem;
+    }
+
+    /* المرحلة 1: بطاقات المعاني */
+    .match-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    @media (max-width: 680px) {
+      .match-grid { grid-template-columns: 1fr; }
+    }
+
+    .match-col {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .col-label {
+      font-weight: 800;
+      color: var(--green);
+      text-align: center;
+      padding: 8px;
+      background: var(--green-soft);
+      border-radius: 10px;
+    }
+
+    .match-item {
+      background: #f8fafc;
+      border: 2px solid #cbd5e1;
+      border-radius: 14px;
+      padding: 15px 18px;
+      font-size: 1.08rem;
+      font-weight: 700;
+      text-align: center;
+      cursor: pointer;
+      transition: 0.2s;
+      user-select: none;
+    }
+
+    .match-item:hover:not(.matched) {
+      border-color: var(--green);
+      transform: translateY(-2px);
+    }
+
+    .match-item.selected {
+      background: var(--gold-soft);
+      border-color: var(--gold);
+      color: #92400e;
+      transform: scale(1.02);
+    }
+
+    .match-item.matched {
+      background: var(--green-soft);
+      border-color: var(--green);
+      color: var(--green);
+      cursor: default;
+      opacity: 0.85;
+    }
+
+    .match-item.wrong {
+      background: var(--red-soft);
+      border-color: var(--red);
+      color: var(--red);
+      animation: shake 0.35s;
+    }
+
+    @keyframes shake {
+      0%, 100% { transform: translateX(0); }
+      25% { transform: translateX(-6px); }
+      75% { transform: translateX(6px); }
+    }
+
+    /* المرحلة 2: جسر الألم والأمل */
+    .sort-word-box {
+      background: linear-gradient(135deg, #1e293b, #334155);
+      color: var(--white);
+      border-radius: 16px;
+      padding: 26px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .sort-counter {
+      font-size: 0.9rem;
+      color: #cbd5e1;
+      margin-bottom: 8px;
+    }
+
+    .current-word {
+      font-size: 2rem;
+      font-weight: 800;
+      color: #fde68a;
+    }
+
+    .sort-buttons {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .btn-pain, .btn-hope {
+      padding: 18px;
+      border: none;
+      border-radius: 14px;
+      font-size: 1.15rem;
+      font-weight: 800;
+      cursor: pointer;
+      transition: 0.2s;
+      color: var(--white);
+    }
+
+    .btn-pain {
+      background: var(--red);
+      box-shadow: 0 6px 16px rgba(183, 28, 28, 0.25);
+    }
+
+    .btn-pain:hover { background: #991b1b; transform: translateY(-2px); }
+
+    .btn-hope {
+      background: var(--green);
+      box-shadow: 0 6px 16px rgba(27, 94, 32, 0.25);
+    }
+
+    .btn-hope:hover { background: #14532d; transform: translateY(-2px); }
+
+    .bridge-buckets {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .bucket {
+      border-radius: 14px;
+      padding: 16px;
+      min-height: 130px;
+    }
+
+    .bucket.pain-bucket {
+      background: var(--red-soft);
+      border: 2px dashed var(--red);
+    }
+
+    .bucket.hope-bucket {
+      background: var(--green-soft);
+      border: 2px dashed var(--green);
+    }
+
+    .bucket h4 {
+      margin-bottom: 10px;
+      text-align: center;
+      font-size: 1rem;
+    }
+
+    .chip-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: center;
+    }
+
+    .chip {
+      background: var(--white);
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+    }
+
+    /* المرحلة 3: الاختيار من متعدد */
+    .q-box {
+      background: #f8fafc;
+      border-right: 6px solid var(--green);
+      padding: 20px;
+      border-radius: 14px;
+      font-size: 1.2rem;
+      font-weight: 800;
+      margin-bottom: 20px;
+    }
+
+    .options-grid {
+      display: grid;
+      gap: 12px;
+    }
+
+    .option-btn {
+      background: var(--white);
+      border: 2px solid #cbd5e1;
+      border-radius: 14px;
+      padding: 15px 20px;
+      text-align: right;
+      font-size: 1.05rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .option-btn:hover:not(:disabled) {
+      border-color: var(--green);
+      background: #f0fdf4;
+    }
+
+    .option-btn.correct {
+      background: var(--green-soft);
+      border-color: var(--green);
+      color: var(--green);
+    }
+
+    .option-btn.incorrect {
+      background: var(--red-soft);
+      border-color: var(--red);
+      color: var(--red);
+    }
+
+    .feedback-bar {
+      margin-top: 18px;
+      padding: 14px 18px;
+      border-radius: 12px;
+      font-weight: 700;
+      display: none;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .feedback-bar.ok {
+      display: flex;
+      background: var(--green-soft);
+      color: var(--green);
+    }
+
+    .feedback-bar.err {
+      display: flex;
+      background: var(--red-soft);
+      color: var(--red);
+    }
+
+    .btn-primary {
+      background: var(--green);
+      color: var(--white);
+      border: none;
+      padding: 12px 26px;
+      border-radius: 12px;
+      font-size: 1rem;
+      font-weight: 800;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .btn-primary:hover {
+      background: #14532d;
+      transform: translateY(-1px);
+    }
+
+    .center-actions {
+      text-align: center;
+      margin-top: 22px;
+    }
+
+    /* شاشة النهاية */
+    .final-box {
+      text-align: center;
+      padding: 20px 10px;
+    }
+
+    .trophy {
+      font-size: 4.5rem;
+      margin-bottom: 10px;
+    }
+
+    .final-score {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--green);
+      margin: 12px 0;
+    }
+
+    /* نافذة عرض القصيدة */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.65);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      z-index: 200;
+    }
+
+    .modal-backdrop.open {
+      display: flex;
+    }
+
+    .modal-card {
+      background: var(--white);
+      max-width: 720px;
+      width: 100%;
+      max-height: 85vh;
+      overflow-y: auto;
+      border-radius: 20px;
+      padding: 26px;
+      position: relative;
+    }
+
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid #e2e8f0;
+      padding-bottom: 12px;
+      margin-bottom: 16px;
+    }
+
+    .close-btn {
+      background: var(--red-soft);
+      color: var(--red);
+      border: none;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      font-size: 1.2rem;
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    .verse-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      padding: 10px 14px;
+      border-radius: 10px;
+      font-size: 1.08rem;
+      font-weight: 700;
+    }
+
+    .verse-row:nth-child(odd) {
+      background: #f8fafc;
+    }
+
+    @media (max-width: 600px) {
+      .verse-row { grid-template-columns: 1fr; text-align: center; }
+    }
+
+    footer {
+      text-align: center;
+      padding: 18px;
+      background: var(--white);
+      border-top: 1px solid #e2e8f0;
+      color: var(--muted);
+      font-size: 0.92rem;
+      font-weight: 700;
+      margin-top: auto;
+    }
+
+    footer span {
+      color: var(--green);
+      font-weight: 800;
+    }
+  </style>
+</head>
+<body>
+  <div class="flag-bar"></div>
+
+  <header>
+    <div class="header-inner">
+      <div class="title-group">
+        <h1>قصيدة «سَنَعودُ» — أبو سلمى</h1>
+        <p>الصف السابع الأساسي • اللغة العربية (المنهاج الفلسطيني)</p>
+      </div>
+      <div class="hud">
+        <div class="badge">⭐ النقاط: <span id="scoreDisplay">0</span></div>
+        <button class="btn-outline" onclick="togglePoemModal()">📖 عرض القصيدة</button>
+        <button class="btn-outline" id="soundBtn" onclick="toggleSound()">🔊 الصوت: يعمل</button>
+      </div>
+    </div>
+  </header>
+
+  <nav class="stepper">
+    <div class="step-pill active" id="pill-1" onclick="goToStage(1)">1️⃣ بطاقات المعاني</div>
+    <div class="step-pill" id="pill-2" onclick="goToStage(2)">2️⃣ جسر الألم والأمل</div>
+    <div class="step-pill" id="pill-3" onclick="goToStage(3)">3️⃣ تحدي الصور والأساليب</div>
+  </nav>
+
+  <main>
+    <!-- المرحلة 1 -->
+    <section id="stage-1" class="card">
+      <h2 class="stage-title">المرحلة الأولى: بطاقات المعاني</h2>
+      <p class="stage-desc">اضغطي على الكلمة من العمود الأيمن، ثم اختاري معناها الصحيح من العمود الأيسر.</p>
+      <div class="match-grid">
+        <div class="match-col" id="wordsCol">
+          <div class="col-label">الكلمة</div>
+        </div>
+        <div class="match-col" id="meaningsCol">
+          <div class="col-label">المعنى</div>
+        </div>
+      </div>
+      <div class="center-actions" id="stage1Next" style="display:none;">
+        <p style="color: var(--green); font-weight: 800; margin-bottom: 12px;">🎉 أحسنتِ! أتممتِ جميع المعاني بنجاح.</p>
+        <button class="btn-primary" onclick="goToStage(2)">الانتقال إلى جسر الألم والأمل ⬅️</button>
+      </div>
+    </section>
+
+    <!-- المرحلة 2 -->
+    <section id="stage-2" class="card" style="display:none;">
+      <h2 class="stage-title">المرحلة الثانية: جسر الألم والأمل</h2>
+      <p class="stage-desc">صنّفي كلمات القصيدة التالية إلى ضفة «الألم والحنين» أو ضفة «الأمل والعودة».</p>
+
+      <div id="sortActiveArea">
+        <div class="sort-word-box">
+          <div class="sort-counter" id="sortCounter">الكلمة 1 من 8</div>
+          <div class="current-word" id="currentSortWord">باكيات</div>
+        </div>
+
+        <div class="sort-buttons">
+          <button class="btn-pain" onclick="checkSort('pain')">💔 ضفة الألم والحنين</button>
+          <button class="btn-hope" onclick="checkSort('hope')">🕊️ ضفة الأمل والعودة</button>
+        </div>
+      </div>
+
+      <div id="sortFeedback" class="feedback-bar"></div>
+
+      <div class="bridge-buckets" style="margin-top: 18px;">
+        <div class="bucket pain-bucket">
+          <h4 style="color: var(--red);">💔 ضفة الألم والحنين</h4>
+          <div class="chip-list" id="painChips"></div>
+        </div>
+        <div class="bucket hope-bucket">
+          <h4 style="color: var(--green);">🕊️ ضفة الأمل والعودة</h4>
+          <div class="chip-list" id="hopeChips"></div>
+        </div>
+      </div>
+
+      <div class="center-actions" id="stage2Next" style="display:none;">
+        <p style="color: var(--green); font-weight: 800; margin-bottom: 12px;">🌟 رائع! عبرنا الجسر من الألم إلى الأمل.</p>
+        <button class="btn-primary" onclick="goToStage(3)">الانتقال إلى تحدي الصور والأساليب ⬅️</button>
+      </div>
+    </section>
+
+    <!-- المرحلة 3 -->
+    <section id="stage-3" class="card" style="display:none;">
+      <h2 class="stage-title">المرحلة الثالثة: تحدي الصور والأساليب</h2>
+      <p class="stage-desc" id="quizProgress">السؤال 1 من 5</p>
+
+      <div class="q-box" id="questionText"></div>
+      <div class="options-grid" id="optionsContainer"></div>
+
+      <div id="quizFeedback" class="feedback-bar">
+        <span id="quizFeedbackText"></span>
+        <button class="btn-primary" id="nextQuestionBtn" onclick="nextQuestion()">السؤال التالي ⬅️</button>
+      </div>
+    </section>
+
+    <!-- شاشة النهاية -->
+    <section id="stage-final" class="card" style="display:none;">
+      <div class="final-box">
+        <div class="trophy">🏆</div>
+        <h2 style="font-size: 1.8rem; color: var(--dark);">مبارك! أنهيتِ رحلة «سنعود» بنجاح</h2>
+        <div class="final-score" id="finalScoreText">0 نقطة</div>
+        <p id="finalMessage" style="color: var(--muted); font-size: 1.1rem; max-width: 520px; margin: 0 auto 24px;"></p>
+        <button class="btn-primary" onclick="restartAll()">🔄 إعادة النشاط من البداية</button>
+      </div>
+    </section>
+  </main>
+
+  <!-- نافذة القصيدة -->
+  <div class="modal-backdrop" id="poemModal" onclick="if(event.target===this) togglePoemModal()">
+    <div class="modal-card">
+      <div class="modal-header">
+        <div>
+          <h3 style="color: var(--green); font-size: 1.3rem;">قصيدة: سَنَعودُ</h3>
+          <p style="font-size: 0.88rem; color: var(--muted);">عبد الكريم الكرمي (أبو سلمى) • طولكرم (1909–1980) • «زيتونة فلسطين»</p>
+        </div>
+        <button class="close-btn" onclick="togglePoemModal()">✕</button>
+      </div>
+      <div class="verse-row"><span>فِلَسْطينُ الْحَبيبَةُ كَيْفَ أَحْيا</span><span>بَعيداً عَنْ سُهولِكِ وَالْهِضابِ؟</span></div>
+      <div class="verse-row"><span>تُناديني السُّفوحُ مُخَضَّباتٍ</span><span>وَفي الْآفاقِ آثارُ الْخِضابِ</span></div>
+      <div class="verse-row"><span>تُناديني الشَّواطِئُ باكِياتٍ</span><span>وَفي سَمْعِ الزَّمانِ صَدى انْتِحابِ</span></div>
+      <div class="verse-row"><span>تُناديني مَدائِنُكِ الْيَتامى</span><span>تُناديني قُراكِ مَعَ الْقِبابِ</span></div>
+      <div class="verse-row"><span>غَداً سَنَعودُ وَالْأَجْيالُ تُصْغي</span><span>إِلى وَقْعِ الْخُطا عِنْدَ الْإِيابِ</span></div>
+      <div class="verse-row"><span>نَعودُ مَعَ الْعَواصِفِ داوِياتٍ</span><span>مَعَ الْبَرْقِ الْمُقَدَّسِ وَالشِّهابِ</span></div>
+      <div class="verse-row"><span>مَعَ الْأَمَلِ الْمُجَنَّحِ وَالْأَغاني</span><span>مَعَ النَّسْرِ الْمُحَلِّقِ وَالْعُقابِ</span></div>
+      <div class="verse-row"><span>أَجَلْ سَتَعودُ آلافُ الضَّحايا</span><span>ضَحايا الظُّلْمِ تَفْتَحُ كُلَّ بابِ</span></div>
+    </div>
+  </div>
+
+  <footer>
+    جميع الحقوق محفوظة © <span>المعلمة شروق مقنصه</span> • الصف السابع الأساسي
+  </footer>
+
+  <script>
+    // المؤثرات الصوتية بدون ملفات خارجية
+    let soundEnabled = true;
+    const AudioCtx = window.AudioContext || window.webkitAudioContext;
+    let ctx = null;
+
+    function playTone(freq, duration, type = 'sine') {
+      if (!soundEnabled) return;
+      if (!ctx) ctx = new AudioCtx();
+      const osc = ctx.createOscillator();
+      const gain = ctx.createGain();
+      osc.type = type;
+      osc.frequency.value = freq;
+      gain.gain.setValueAtTime(0.12, ctx.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + duration);
+      osc.connect(gain);
+      gain.connect(ctx.destination);
+      osc.start();
+      osc.stop(ctx.currentTime + duration);
+    }
+
+    function playSuccess() {
+      playTone(523.25, 0.14);
+      setTimeout(() => playTone(659.25, 0.2), 110);
+    }
+
+    function playError() {
+      playTone(220, 0.22, 'sawtooth');
+    }
+
+    function playWin() {
+      [523, 659, 784, 1046].forEach((f, i) => setTimeout(() => playTone(f, 0.25), i * 130));
+    }
+
+    function toggleSound() {
+      soundEnabled = !soundEnabled;
+      document.getElementById('soundBtn').textContent = soundEnabled ? '🔊 الصوت: يعمل' : '🔇 الصوت: صامت';
+    }
+
+    function togglePoemModal() {
+      document.getElementById('poemModal').classList.toggle('open');
+    }
+
+    // النقاط والتنقل
+    let score = 0;
+    function addScore(pts) {
+      score += pts;
+      document.getElementById('scoreDisplay').textContent = score;
+    }
+
+    function goToStage(num) {
+      ['stage-1', 'stage-2', 'stage-3', 'stage-final'].forEach(id => {
+        document.getElementById(id).style.display = 'none';
+      });
+      document.getElementById('stage-' + num).style.display = 'block';
+      for (let i = 1; i <= 3; i++) {
+        const pill = document.getElementById('pill-' + i);
+        pill.classList.remove('active');
+        if (i === num) pill.classList.add('active');
+      }
+    }
+
+    // ===== المرحلة 1: المعاني =====
+    const vocabPairs = [
+      { id: 1, word: 'الهضاب', meaning: 'الجبال المنبسطة' },
+      { id: 2, word: 'السفوح', meaning: 'أسفل الجبال' },
+      { id: 3, word: 'الصدى', meaning: 'الصوت المرتدّ المنعكس' },
+      { id: 4, word: 'الانتحاب', meaning: 'البكاء بصوت عالٍ' },
+      { id: 5, word: 'الإياب', meaning: 'الرجوع والعودة' },
+      { id: 6, word: 'العُقاب', meaning: 'طائر جارح قوي' }
+    ];
+
+    let selectedWord = null;
+    let matchedCount = 0;
+
+    function shuffle(arr) {
+      return [...arr].sort(() => Math.random() - 0.5);
+    }
+
+    function initStage1() {
+      selectedWord = null;
+      matchedCount = 0;
+      const wordsCol = document.getElementById('wordsCol');
+      const meaningsCol = document.getElementById('meaningsCol');
+      wordsCol.innerHTML = '<div class="col-label">الكلمة</div>';
+      meaningsCol.innerHTML = '<div class="col-label">المعنى</div>';
+      document.getElementById('stage1Next').style.display = 'none';
+
+      shuffle(vocabPairs).forEach(pair => {
+        const btn = document.createElement('button');
+        btn.className = 'match-item';
+        btn.textContent = pair.word;
+        btn.dataset.id = pair.id;
+        btn.onclick = () => selectWord(btn);
+        wordsCol.appendChild(btn);
+      });
+
+      shuffle(vocabPairs).forEach(pair => {
+        const btn = document.createElement('button');
+        btn.className = 'match-item';
+        btn.textContent = pair.meaning;
+        btn.dataset.id = pair.id;
+        btn.onclick = () => selectMeaning(btn);
+        meaningsCol.appendChild(btn);
+      });
+    }
+
+    function selectWord(btn) {
+      if (btn.classList.contains('matched')) return;
+      document.querySelectorAll('#wordsCol .match-item').forEach(b => b.classList.remove('selected'));
+      btn.classList.add('selected');
+      selectedWord = btn;
+    }
+
+    function selectMeaning(btn) {
+      if (!selectedWord || btn.classList.contains('matched')) return;
+      if (btn.dataset.id === selectedWord.dataset.id) {
+        btn.classList.add('matched');
+        selectedWord.classList.remove('selected');
+        selectedWord.classList.add('matched');
+        addScore(10);
+        playSuccess();
+        matchedCount++;
+        selectedWord = null;
+        if (matchedCount === vocabPairs.length) {
+          document.getElementById('pill-1').classList.add('done');
+          document.getElementById('stage1Next').style.display = 'block';
+          playWin();
+        }
+      } else {
+        btn.classList.add('wrong');
+        playError();
+        setTimeout(() => btn.classList.remove('wrong'), 400);
+      }
+    }
+
+    // ===== المرحلة 2: جسر الألم والأمل =====
+    const sortWords = [
+      { word: 'باكيات', side: 'pain' },
+      { word: 'اليتامى', side: 'pain' },
+      { word: 'الضحايا', side: 'pain' },
+      { word: 'الظلم', side: 'pain' },
+      { word: 'سنعود', side: 'hope' },
+      { word: 'الأمل المجنّح', side: 'hope' },
+      { word: 'النسر المحلّق', side: 'hope' },
+      { word: 'الأغاني', side: 'hope' }
+    ];
+    let sortIndex = 0;
+
+    function initStage2() {
+      sortIndex = 0;
+      document.getElementById('painChips').innerHTML = '';
+      document.getElementById('hopeChips').innerHTML = '';
+      document.getElementById('stage2Next').style.display = 'none';
+      document.getElementById('sortActiveArea').style.display = 'block';
+      document.getElementById('sortFeedback').className = 'feedback-bar';
+      renderSortWord();
+    }
+
+    function renderSortWord() {
+      document.getElementById('sortCounter').textContent = `الكلمة ${sortIndex + 1} من ${sortWords.length}`;
+      document.getElementById('currentSortWord').textContent = sortWords[sortIndex].word;
+    }
+
+    function checkSort(side) {
+      const item = sortWords[sortIndex];
+      const fb = document.getElementById('sortFeedback');
+      if (side === item.side) {
+        const chip = document.createElement('span');
+        chip.className = 'chip';
+        chip.textContent = item.word;
+        document.getElementById(side === 'pain' ? 'painChips' : 'hopeChips').appendChild(chip);
+        addScore(10);
+        playSuccess();
+        sortIndex++;
+        if (sortIndex < sortWords.length) {
+          renderSortWord();
+        } else {
+          document.getElementById('sortActiveArea').style.display = 'none';
+          fb.className = 'feedback-bar';
+          document.getElementById('pill-2').classList.add('done');
+          document.getElementById('stage2Next').style.display = 'block';
+          playWin();
+        }
+      } else {
+        fb.className = 'feedback-bar err';
+        fb.textContent = '❌ ليست في هذه الضفة، فكّري في معنى الكلمة وحاولي مرة أخرى.';
+        playError();
+        setTimeout(() => { fb.className = 'feedback-bar'; }, 1500);
+      }
+    }
+
+    // ===== المرحلة 3: تحدي الصور والأساليب =====
+    const questions = [
+      {
+        q: 'ما الأسلوب البياني في قول الشاعر: «تُناديني الشواطئُ باكياتٍ»؟',
+        options: [
+          'تشبيه بليغ بين الشواطئ والأمواج',
+          'استعارة مكنية شخّصت الشواطئ بإنسان يبكي',
+          'كناية عن موت الشاعر'
+        ],
+        answer: 1,
+        note: 'أحسنتِ! استعارة مكنية شخّص فيها الشاعر الشواطئ بإنسانٍ يبكي لبيان حزنها وحاجتها لأبنائها.'
+      },
+      {
+        q: 'علامَ يرمز الشاعر بـ «النسر المحلّق والعُقاب» في البيت السابع؟',
+        options: [
+          'الحزن والضعف والاستسلام',
+          'القوة والشموخ والعزّة والانتصار',
+          'السفر والابتعاد عن الوطن'
+        ],
+        answer: 1,
+        note: 'رائع! النسر والعقاب يرمزان للقوة والشموخ وحتمية الانتصار.'
+      },
+      {
+        q: 'ما الأسلوب في قول الشاعر: «كيف أحيا بعيداً عن سهولكِ والهضاب؟» وما معناه؟',
+        options: [
+          'أسلوب أمر يطلب فيه الرحيل عن الوطن',
+          'أسلوب استفهام يدل على أنه لا يستطيع العيش بعيداً عن وطنه',
+          'أسلوب نهي يحذّر فيه من السفر'
+        ],
+        answer: 1,
+        note: 'صحيح! هو استفهام غرضه النفي؛ أي لا يمكنني العيش بعيداً عن فلسطين.'
+      },
+      {
+        q: 'علامَ يدلّ تكرار كلمة «تناديني» أربع مرات في القصيدة؟',
+        options: [
+          'على شدة شوق الأرض لأبنائها واستغاثتها بهم',
+          'على أن الشاعر نسي أسماء المدن',
+          'على هدوء الشواطئ والجبال'
+        ],
+        answer: 0,
+        note: 'أحسنتِ! التكرار يؤكد شدة التعلق واستغاثة الأرض بأهلها.'
+      },
+      {
+        q: 'في البيت الخامس: «غداً سنعودُ والأجيالُ تُصغي»، ما العاطفة التي بدأت تسيطر على الشاعر؟',
+        options: [
+          'عاطفة اليأس والخوف',
+          'عاطفة الأمل والتفاؤل والإصرار على العودة',
+          'عاطفة الندم على الماضي'
+        ],
+        answer: 1,
+        note: 'ممتاز! هنا تحوّلت القصيدة من عاطفة الألم إلى عاطفة الأمل والإصرار.'
+      }
+    ];
+
+    let qIndex = 0;
+
+    function initStage3() {
+      qIndex = 0;
+      renderQuestion();
+    }
+
+    function renderQuestion() {
+      const item = questions[qIndex];
+      document.getElementById('quizProgress').textContent = `السؤال ${qIndex + 1} من ${questions.length}`;
+      document.getElementById('questionText').textContent = item.q;
+      const container = document.getElementById('optionsContainer');
+      container.innerHTML = '';
+      document.getElementById('quizFeedback').className = 'feedback-bar';
+
+      item.options.forEach((opt, idx) => {
+        const btn = document.createElement('button');
+        btn.className = 'option-btn';
+        btn.textContent = opt;
+        btn.onclick = () => selectOption(idx, btn);
+        container.appendChild(btn);
+      });
+    }
+
+    function selectOption(idx, btn) {
+      const item = questions[qIndex];
+      const allBtns = document.querySelectorAll('.option-btn');
+      allBtns.forEach(b => b.disabled = true);
+
+      const fb = document.getElementById('quizFeedback');
+      const fbText = document.getElementById('quizFeedbackText');
+      const nextBtn = document.getElementById('nextQuestionBtn');
+      nextBtn.textContent = qIndex === questions.length - 1 ? 'عرض النتيجة النهائية 🏆' : 'السؤال التالي ⬅️';
+
+      if (idx === item.answer) {
+        btn.classList.add('correct');
+        addScore(15);
+        playSuccess();
+        fb.className = 'feedback-bar ok';
+        fbText.textContent = '✅ ' + item.note;
+      } else {
+        btn.classList.add('incorrect');
+        allBtns[item.answer].classList.add('correct');
+        playError();
+        fb.className = 'feedback-bar err';
+        fbText.textContent = '❌ الإجابة الصحيحة موضّحة باللون الأخضر.';
+      }
+    }
+
+    function nextQuestion() {
+      qIndex++;
+      if (qIndex < questions.length) {
+        renderQuestion();
+      } else {
+        document.getElementById('pill-3').classList.add('done');
+        showFinal();
+      }
+    }
+
+    function showFinal() {
+      ['stage-1', 'stage-2', 'stage-3'].forEach(id => document.getElementById(id).style.display = 'none');
+      document.getElementById('stage-final').style.display = 'block';
+      document.getElementById('finalScoreText').textContent = `${score} / 215 نقطة`;
+      document.getElementById('finalMessage').textContent =
+        score >= 180
+          ? 'أداء استثنائي! فهمتِ معاني القصيدة وصورها الجميلة ومشاعر الشاعر ببراعة.'
+          : 'أداء جميل جداً! يمكنكِ إعادة اللعب لجمع العلامة الكاملة وتثبيت المعلومات.';
+      playWin();
+    }
+
+    function restartAll() {
+      score = 0;
+      document.getElementById('scoreDisplay').textContent = '0';
+      for (let i = 1; i <= 3; i++) document.getElementById('pill-' + i).classList.remove('done');
+      initStage1();
+      initStage2();
+      initStage3();
+      goToStage(1);
+    }
+
+    initStage1();
+    initStage2();
+    initStage3();
+  </script>
+</body>
+</html>
