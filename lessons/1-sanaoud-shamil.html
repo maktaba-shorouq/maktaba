@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>الدرس التفاعلي الشامل: قصيدة سنعود | المعلمة شروق مقنصة</title>
+<meta name="description" content="درس تفاعلي شامل لقصيدة سنعود للشاعر عبد الكريم الكرمي (أبو سلمى) — الصف السابع الأساسي، إعداد المعلمة شروق مقنصة." />
+<meta property="og:title" content="📖 الدرس التفاعلي الشامل: قصيدة سنعود — أبو سلمى" />
+<meta property="og:description" content="فيديو الشاعر، شرح الأبيات بيتًا بيتًا، بطاقات المعاني، جسر الألم والأمل، أسئلة المناقشة ١–١١، والتحدي الختامي." />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23245749'/><text x='50' y='68' font-size='54' text-anchor='middle'>🫒</text></svg>">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap');
+  :root {
+    --olive: #245749;
+    --olive-mid: #3a7a67;
+    --olive-soft: #eef8f4;
+    --olive-border: #a9d3c6;
+    --rose: #9d3c5c;
+    --rose-soft: #fdf2f6;
+    --rose-border: #e8a9bd;
+    --lav: #523b7a;
+    --lav-soft: #f5effa;
+    --lav-border: #bfb0dd;
+    --peach: #8c4a1c;
+    --peach-soft: #fef6ef;
+    --peach-border: #f2c3a3;
+    --ink: #1f2937;
+    --muted: #64748b;
+    --bg: #f8faf9;
+    --white: #ffffff;
+    --shadow: 0 8px 22px rgba(15, 23, 42, 0.06);
+    --r: 16px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Cairo', 'Tajawal', 'Segoe UI', Tahoma, Arial, sans-serif; }
+  body { background: var(--bg); color: var(--ink); min-height: 100vh; display: flex; flex-direction: column; line-height: 1.7; }
+
+  .flag-bar { height: 7px; background: linear-gradient(to left, #1e293b 25%, #ffffff 25%, #ffffff 50%, #245749 50%, #245749 75%, #b71c1c 75%); }
+
+  header { background: var(--white); border-bottom: 1px solid #e2e8f0; padding: 14px 18px; position: sticky; top: 0; z-index: 60; box-shadow: 0 3px 12px rgba(0,0,0,0.04); }
+  .h-in { max-width: 1020px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+  .h-title h1 { font-size: 1.35rem; color: var(--olive); font-weight: 800; line-height: 1.3; }
+  .h-title p { font-size: 0.85rem; color: var(--muted); }
+  .hud { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .score-pill { background: var(--peach-soft); border: 1.5px solid var(--peach-border); color: var(--peach); padding: 6px 14px; border-radius: 999px; font-weight: 800; font-size: 0.92rem; }
+  .hbtn { background: var(--white); border: 1.5px solid var(--olive-border); color: var(--olive); padding: 6px 12px; border-radius: 10px; font-weight: 700; font-size: 0.85rem; cursor: pointer; transition: .18s; }
+  .hbtn:hover { background: var(--olive-soft); }
+
+  /* Tabs nav - swipeable on mobile */
+  .tabs-wrap { background: #fff; border-bottom: 1px solid #e5e7eb; padding: 10px 14px; }
+  .tabs { max-width: 1020px; margin: 0 auto; display: flex; gap: 8px; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+  .tabs::-webkit-scrollbar { display: none; }
+  .tab { flex-shrink: 0; background: #f8fafc; border: 1.5px solid #e2e8f0; color: var(--muted); padding: 8px 14px; border-radius: 999px; font-weight: 700; font-size: 0.88rem; cursor: pointer; transition: .18s; }
+  .tab.on { background: var(--olive); border-color: var(--olive); color: #fff; box-shadow: 0 4px 12px rgba(36,87,73,0.22); }
+  .tab.done:not(.on) { background: var(--olive-soft); border-color: var(--olive-border); color: var(--olive); }
+
+  main { max-width: 1020px; width: 100%; margin: 18px auto 30px; padding: 0 14px; flex: 1; }
+  .panel { display: none; animation: fade .28s ease; }
+  .panel.on { display: block; }
+  @keyframes fade { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+
+  .card { background: var(--white); border: 1px solid #e5e7eb; border-radius: var(--r); box-shadow: var(--shadow); padding: 20px; margin-bottom: 16px; }
+  .card h2 { font-size: 1.2rem; color: var(--olive); font-weight: 800; margin-bottom: 6px; }
+  .sub { font-size: 0.92rem; color: var(--muted); margin-bottom: 14px; }
+
+  .callout { border-radius: 12px; padding: 14px 16px; margin-bottom: 14px; border-right: 5px solid var(--olive-border); background: var(--olive-soft); }
+  .callout.rose { background: var(--rose-soft); border-right-color: var(--rose-border); }
+  .callout.lav { background: var(--lav-soft); border-right-color: var(--lav-border); }
+  .callout.peach { background: var(--peach-soft); border-right-color: var(--peach-border); }
+  .callout h3 { font-size: 1rem; margin-bottom: 4px; color: var(--ink); }
+
+  .btn { background: var(--olive); color: #fff; border: 0; padding: 9px 18px; border-radius: 10px; font-weight: 700; font-size: 0.92rem; cursor: pointer; transition: .18s; display: inline-flex; align-items: center; gap: 6px; text-decoration: none; }
+  .btn:hover { background: #1c4439; }
+  .btn.ghost { background: #fff; color: var(--olive); border: 1.5px solid var(--olive-border); }
+  .btn.ghost:hover { background: var(--olive-soft); }
+  .btn.sm { padding: 6px 12px; font-size: 0.82rem; }
+
+  /* Video boxes */
+  .vid-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 10px; }
+  @media (max-width: 760px) { .vid-grid { grid-template-columns: 1fr; } }
+  .vid-box { border: 1.5px solid #e2e8f0; border-radius: 14px; padding: 14px; background: #fcfdfd; }
+  .vid-box h3 { font-size: 1rem; color: var(--olive); margin-bottom: 4px; }
+  .yt-wrap { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 10px; background: #0f172a; margin: 10px 0; }
+  .yt-wrap iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+  .yt-placeholder { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; color: #fff; cursor: pointer; background: linear-gradient(135deg, #245749, #1e293b); padding: 12px; text-align: center; }
+  .yt-play { width: 54px; height: 54px; border-radius: 50%; background: rgba(255,255,255,.18); border: 2px solid #fff; display: grid; place-items: center; font-size: 1.4rem; }
+
+  /* Poet Q&A list */
+  .qa-item { border: 1px solid #e5e7eb; border-radius: 12px; padding: 12px 14px; margin-bottom: 10px; background: #fff; }
+  .qa-q { display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; font-weight: 700; font-size: 0.96rem; }
+  .qa-a { display: none; margin-top: 8px; padding: 10px 12px; border-radius: 10px; background: var(--olive-soft); color: #194237; font-size: 0.92rem; border-right: 4px solid var(--olive-border); }
+  .qa-a.open { display: block; }
+
+  /* Verses interactive */
+  .axis-bar { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 10px 14px; border-radius: 12px; font-weight: 800; font-size: 1rem; margin: 14px 0 10px; flex-wrap: wrap; }
+  .axis-pain { background: var(--rose-soft); color: var(--rose); border-right: 5px solid var(--rose-border); }
+  .axis-hope { background: var(--olive-soft); color: var(--olive); border-right: 5px solid var(--olive-border); }
+
+  .verse-card { border: 1.5px solid #e2e8f0; border-radius: 14px; margin-bottom: 10px; overflow: hidden; background: #fff; transition: .18s; }
+  .verse-card.open { border-color: var(--olive-border); box-shadow: 0 6px 18px rgba(36,87,73,0.08); }
+  .verse-head { padding: 13px 16px; cursor: pointer; display: flex; align-items: center; gap: 10px; justify-content: space-between; background: #fcfdfd; }
+  .verse-head:hover { background: var(--olive-soft); }
+  .v-num { width: 28px; height: 28px; border-radius: 50%; background: var(--olive); color: #fff; font-weight: 800; font-size: 0.85rem; display: grid; place-items: center; flex-shrink: 0; }
+  .v-num.pain { background: var(--rose); }
+  .v-lines { flex: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; font-size: 1.08rem; font-weight: 800; color: var(--ink); }
+  @media (max-width: 640px) { .v-lines { grid-template-columns: 1fr; gap: 2px; font-size: 1rem; } }
+  .v-arrow { color: var(--muted); font-size: 0.9rem; transition: .2s; }
+  .verse-card.open .v-arrow { transform: rotate(180deg); color: var(--olive); }
+  .verse-body { display: none; padding: 14px 16px; border-top: 1px solid #eef2f7; background: #fff; }
+  .verse-card.open .verse-body { display: block; }
+  .vb-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  @media (max-width: 640px) { .vb-grid { grid-template-columns: 1fr; } }
+  .vb-box { padding: 10px 12px; border-radius: 10px; font-size: 0.9rem; background: #f8fafc; border: 1px solid #e5e7eb; }
+  .vb-box b { display: block; margin-bottom: 3px; font-size: 0.85rem; }
+  .vb-box.exp { background: var(--olive-soft); border-color: var(--olive-border); }
+  .vb-box.exp b { color: var(--olive); }
+  .vb-box.img { background: var(--lav-soft); border-color: var(--lav-border); }
+  .vb-box.img b { color: var(--lav); }
+  .vb-box.voc { background: var(--rose-soft); border-color: var(--rose-border); }
+  .vb-box.voc b { color: var(--rose); }
+  .vb-box.rem { background: var(--peach-soft); border-color: var(--peach-border); }
+  .vb-box.rem b { color: var(--peach); }
+
+  /* Flashcards & Matching */
+  .mode-switch { display: flex; gap: 8px; margin-bottom: 14px; flex-wrap: wrap; }
+  .flash-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 12px; }
+  .fcard { border: 1.5px solid var(--lav-border); background: var(--lav-soft); border-radius: 14px; padding: 18px 14px; text-align: center; cursor: pointer; min-height: 112px; display: flex; flex-direction: column; justify-content: center; transition: .2s; }
+  .fcard.flipped { background: var(--olive-soft); border-color: var(--olive-border); }
+  .fcard .fw { font-size: 1.2rem; font-weight: 800; color: var(--lav); }
+  .fcard .fm { font-size: 0.95rem; font-weight: 700; color: var(--olive); margin-top: 6px; display: none; }
+  .fcard.flipped .fm { display: block; }
+  .fcard .fhint { font-size: 0.76rem; color: var(--muted); margin-top: 4px; }
+  .fcard.flipped .fhint { display: none; }
+
+  .match-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  @media (max-width: 640px) { .match-grid { grid-template-columns: 1fr; } }
+  .match-col { display: flex; flex-direction: column; gap: 9px; }
+  .col-lbl { text-align: center; font-weight: 800; padding: 7px; border-radius: 10px; background: var(--olive-soft); color: var(--olive); font-size: 0.92rem; }
+  .mitem { background: #f8fafc; border: 2px solid #cbd5e1; border-radius: 12px; padding: 12px 14px; font-weight: 700; text-align: center; cursor: pointer; transition: .18s; }
+  .mitem.sel { background: var(--peach-soft); border-color: #d97706; color: var(--peach); }
+  .mitem.ok { background: var(--olive-soft); border-color: var(--olive); color: var(--olive); opacity: 0.85; cursor: default; }
+  .mitem.bad { background: var(--rose-soft); border-color: #dc2626; color: #b91c1c; }
+
+  /* Bridge sorting */
+  .sort-box { background: linear-gradient(135deg, #245749, #334155); color: #fff; border-radius: 14px; padding: 22px; text-align: center; margin-bottom: 14px; }
+  .sort-cnt { font-size: 0.86rem; color: #d1fae5; margin-bottom: 4px; }
+  .sort-w { font-size: 1.75rem; font-weight: 800; color: #fde68a; }
+  .sort-btns, .buckets { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  @media (max-width: 560px) { .sort-btns, .buckets { grid-template-columns: 1fr; } }
+  .btn-pain { background: #a8324a; color: #fff; border: 0; padding: 14px; border-radius: 12px; font-weight: 800; font-size: 1.02rem; cursor: pointer; }
+  .btn-hope { background: var(--olive); color: #fff; border: 0; padding: 14px; border-radius: 12px; font-weight: 800; font-size: 1.02rem; cursor: pointer; }
+  .bucket { border-radius: 12px; padding: 12px; min-height: 100px; margin-top: 12px; }
+  .bucket.p { background: var(--rose-soft); border: 2px dashed var(--rose-border); }
+  .bucket.h { background: var(--olive-soft); border: 2px dashed var(--olive-border); }
+  .bucket h4 { text-align: center; font-size: 0.95rem; margin-bottom: 8px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; }
+  .chip { background: #fff; padding: 4px 12px; border-radius: 999px; font-weight: 700; font-size: 0.88rem; border: 1px solid #e5e7eb; }
+
+  /* Quiz */
+  .q-box { background: #f8fafc; border-right: 5px solid var(--olive); padding: 15px 16px; border-radius: 12px; font-size: 1.08rem; font-weight: 800; margin-bottom: 14px; }
+  .opts { display: grid; gap: 9px; }
+  .opt { background: #fff; border: 2px solid #cbd5e1; border-radius: 12px; padding: 12px 16px; text-align: right; font-weight: 700; font-size: 0.96rem; cursor: pointer; transition: .18s; }
+  .opt:hover:not(:disabled) { border-color: var(--olive); background: var(--olive-soft); }
+  .opt.correct { background: var(--olive-soft); border-color: var(--olive); color: var(--olive); }
+  .opt.wrong { background: var(--rose-soft); border-color: #dc2626; color: #b91c1c; }
+
+  .fb { margin-top: 12px; padding: 11px 14px; border-radius: 10px; font-weight: 700; font-size: 0.92rem; display: none; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+  .fb.ok { display: flex; background: var(--olive-soft); color: var(--olive); }
+  .fb.err { display: flex; background: var(--rose-soft); color: var(--rose); }
+
+  footer { text-align: center; padding: 14px; background: #fff; border-top: 1px solid #e5e7eb; color: var(--muted); font-size: 0.82rem; font-weight: 700; margin-top: auto; }
+  footer span { color: var(--olive); }
+</style>
+</head>
+<body>
+<div class="flag-bar"></div>
+
+<header>
+  <div class="h-in">
+    <div class="h-title">
+      <h1>قصيدة «سَنَعودُ» — أبو سلمى</h1>
+      <p>الصف السابع الأساسي • اللغة العربية (الوحدة الخامسة، ص ٤٩–٥٠)</p>
+    </div>
+    <div class="hud">
+      <div class="score-pill">⭐ <span id="scoreVal">0</span> / 260</div>
+      <button class="hbtn" id="sndBtn" onclick="toggleSound()">🔊 الصوت</button>
+      <button class="hbtn" onclick="resetAll()">🔄 إعادة</button>
+    </div>
+  </div>
+</header>
+
+<nav class="tabs-wrap">
+  <div class="tabs">
+    <button class="tab on" data-t="intro" onclick="openTab('intro',this)">🎬 بين يدي النص والفيديو</button>
+    <button class="tab" data-t="poem" onclick="openTab('poem',this)">📖 الأبيات والشرح</button>
+    <button class="tab" data-t="vocab" onclick="openTab('vocab',this)">🃏 بطاقات المعاني</button>
+    <button class="tab" data-t="bridge" onclick="openTab('bridge',this)">🌉 جسر الألم والأمل</button>
+    <button class="tab" data-t="disc" onclick="openTab('disc',this)">❓ المناقشة (١–١١)</button>
+    <button class="tab" data-t="quiz" onclick="openTab('quiz',this)">🏆 التحدي الختامي</button>
+  </div>
+</nav>
+
+<main>
+  <!-- TAB 1: INTRO & VIDEOS -->
+  <section id="tab-intro" class="panel on">
+    <div class="card">
+      <h2>🌱 سؤال التهيئة (قبل القراءة)</h2>
+      <div class="callout peach">
+        <h3>«هل يستطيعُ الإنسانُ العيشَ بعيدًا عن وطنِه؟ ولماذا؟»</h3>
+        <p style="font-size:0.9rem;color:#4b5563;">ناقشي الطالبات حول معنى الوطن، ومدن فلسطين ومعالمها، وما حلّ بأهلها عام النكبة (١٩٤٨) قبل الاستماع للقصيدة.</p>
+      </div>
+
+      <h2>🫒 بين يدي النص: الشاعر أبو سلمى</h2>
+      <div class="callout">
+        <p><strong>عبد الكريم بن سعيد الكرمي (أبو سلمى)</strong>، شاعرٌ فلسطينيٌّ لُقِّب بـ <strong>«زيتونة فلسطين»</strong>، وُلد في مدينة <strong>طولكرم</strong> سنة <strong>١٩٠٩م</strong>، وتُوفي سنة <strong>١٩٨٠م</strong>.</p>
+        <p style="margin-top:5px;">• <strong>من أعماله الشعرية:</strong> (المُشرّد)، و(من فلسطين ريشتي).<br>• <strong>من مؤلفاته النثرية:</strong> (كفاح عرب فلسطين).<br>• <strong>ملاحظة الحفظ:</strong> الأبيات <strong>(١–٦)</strong> مطلوبة للحفظ.</p>
+      </div>
+
+      <div class="vid-grid">
+        <div class="vid-box">
+          <h3>🎥 فيديو تعريفي عن الشاعر أبو سلمى</h3>
+          <p class="sub" style="margin-bottom:6px;">تقرير وكالة «وفا» عن الشاعر عبد الكريم الكرمي — شاهدنه ثم أجبن عن الأسئلة أدناه:</p>
+          <div class="yt-wrap" id="yt-poet">
+            <div class="yt-placeholder" onclick="loadYT('yt-poet','sMXIUICcvHc')">
+              <div class="yt-play">▶</div>
+              <div style="font-weight:700;font-size:0.92rem;">اضغطي لتشغيل الفيديو التعريفي عن أبو سلمى</div>
+            </div>
+          </div>
+          <a href="https://www.youtube.com/watch?v=sMXIUICcvHc" target="_blank" rel="noopener" class="btn ghost sm">فتح على يوتيوب ↗</a>
+        </div>
+
+        <div class="vid-box">
+          <h3>🎙️ إلقاء قصيدة «سنعود» (أبيات الصف السابع)</h3>
+          <p class="sub" style="margin-bottom:6px;">استمعي إلى إلقاء القصيدة بإنصات ولاحظي تغيّر النبرة بين الألم والأمل:</p>
+          <div class="yt-wrap" id="yt-poem">
+            <div class="yt-placeholder" onclick="loadYT('yt-poem','ipuZhSWM1gk')">
+              <div class="yt-play">▶</div>
+              <div style="font-weight:700;font-size:0.92rem;">اضغطي للاستماع إلى قصيدة «سنعود» (الصف السابع)</div>
+            </div>
+          </div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;">
+            <a href="https://www.youtube.com/watch?v=ipuZhSWM1gk" target="_blank" rel="noopener" class="btn ghost sm">يوتيوب (١) ↗</a>
+            <a href="https://www.youtube.com/watch?v=XC407TL0Ry8" target="_blank" rel="noopener" class="btn ghost sm">إلقاء بديل (٢) ↗</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>💬 أسئلة سريعة للبنات بعد فيديو الشاعر «زيتونة فلسطين»</h2>
+      <p class="sub">أسئلة شفوية قصيرة لترسيخ التعريف بأبي سلمى قبل الدخول إلى الأبيات:</p>
+      <div id="poetQA"></div>
+      <div style="text-align:center;margin-top:14px;">
+        <button class="btn" onclick="openTabById('poem')">الانتقال إلى شرح الأبيات ⬅️</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- TAB 2: VERSES & ANALYSIS -->
+  <section id="tab-poem" class="panel">
+    <div class="card">
+      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:10px;">
+        <div>
+          <h2>📖 قصيدة «سَنَعودُ» — التحليل التفاعلي بيتًا بيتًا</h2>
+          <p class="sub" style="margin:0;">اضغطي على أي بيت لفتح الشرح، المعاني، الصورة الفنية، وتذكير نحوي سريع.</p>
+        </div>
+        <button class="btn ghost sm" id="toggleAllVBtn" onclick="toggleAllVerses()">👁️ إظهار كل الشروحات</button>
+      </div>
+
+      <div class="axis-bar axis-pain">
+        <span>💔 المحور الأول (الأبيات ١–٤): ألم الشاعر وحنينه إلى الوطن</span>
+        <span style="font-size:0.82rem;font-weight:700;">عاطفة الألم والحزن والشوق</span>
+      </div>
+      <div id="verses-pain"></div>
+
+      <div class="axis-bar axis-hope">
+        <span>🕊️ المحور الثاني (الأبيات ٥–٨): إصرار الشاعر وأمله بالعودة</span>
+        <span style="font-size:0.82rem;font-weight:700;">عاطفة الأمل والتفاؤل والإصرار</span>
+      </div>
+      <div id="verses-hope"></div>
+
+      <div class="callout lav" style="margin-top:14px;">
+        <h3>✍️ وقفة إملائية سريعة من أجواء الدرس</h3>
+        <p style="font-size:0.92rem;">تأمّلي رسم الهمزة المتوسطة في كلمات مرتبطة بالقصيدة: <strong>مَدائِن</strong> (مكسورة)، <strong>تَفاؤُل</strong> (مضمومة بعد ألف مدّ)، <strong>رُؤْيا</strong> (ساكنة بعد ضم)، <strong>بائِس</strong>.</p>
+      </div>
+
+      <div style="text-align:center;margin-top:12px;">
+        <button class="btn" onclick="openTabById('vocab')">الانتقال إلى بطاقات المعاني ⬅️</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- TAB 3: VOCABULARY -->
+  <section id="tab-vocab" class="panel">
+    <div class="card">
+      <h2>🃏 بطاقات المعاني (مفردات الكتاب ص ٤٩)</h2>
+      <p class="sub">اختاري «بطاقات المراجعة» للمناقشة الصفية أو «لعبة المطابقة» لجمع ٧٠ نقطة!</p>
+      <div class="mode-switch">
+        <button class="btn sm" id="vm-match" onclick="setVocabMode('match')">🎯 لعبة المطابقة (٧٠ نقطة)</button>
+        <button class="btn ghost sm" id="vm-cards" onclick="setVocabMode('cards')">🔄 بطاقات المراجعة باللمس</button>
+      </div>
+
+      <div id="vocab-match-area">
+        <div class="match-grid">
+          <div class="match-col" id="wordsCol"><div class="col-lbl">الكلمة</div></div>
+          <div class="match-col" id="meaningsCol"><div class="col-lbl">المعنى</div></div>
+        </div>
+        <div id="vocabDone" style="display:none;text-align:center;margin-top:16px;">
+          <p style="color:var(--olive);font-weight:800;margin-bottom:10px;">🎉 ممتازة! أتقنتِ جميع مفردات القصيدة الـ ٧ (+٧٠ نقطة).</p>
+          <button class="btn" onclick="openTabById('bridge')">الانتقال إلى جسر الألم والأمل ⬅️</button>
+        </div>
+      </div>
+
+      <div id="vocab-cards-area" style="display:none;">
+        <div class="flash-grid" id="flashGrid"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TAB 4: PAIN & HOPE BRIDGE -->
+  <section id="tab-bridge" class="panel">
+    <div class="card">
+      <h2>🌉 جسر الألم والأمل (١٠٠ نقطة)</h2>
+      <p class="sub">صنّفي كلمات القصيدة العشر إلى ضفة «الألم والحنين» أو ضفة «الأمل والعودة» (تمهيد للسؤالين ٩ و١٠).</p>
+
+      <div id="sortActive">
+        <div class="sort-box">
+          <div class="sort-cnt" id="sortCnt">الكلمة 1 من 10</div>
+          <div class="sort-w" id="sortWord"></div>
+        </div>
+        <div class="sort-btns">
+          <button class="btn-pain" onclick="doSort('pain')">💔 ضفة الألم والحنين</button>
+          <button class="btn-hope" onclick="doSort('hope')">🕊️ ضفة الأمل والعودة</button>
+        </div>
+      </div>
+      <div id="sortFb" class="fb"></div>
+
+      <div class="buckets">
+        <div class="bucket p">
+          <h4 style="color:var(--rose);">💔 ضفة الألم والحنين</h4>
+          <div class="chips" id="painBucket"></div>
+        </div>
+        <div class="bucket h">
+          <h4 style="color:var(--olive);">🕊️ ضفة الأمل والعودة</h4>
+          <div class="chips" id="hopeBucket"></div>
+        </div>
+      </div>
+
+      <div id="bridgeDone" style="display:none;text-align:center;margin-top:16px;">
+        <p style="color:var(--olive);font-weight:800;margin-bottom:10px;">🌟 رائع! عبرنا الجسر من الألم إلى الأمل.</p>
+        <button class="btn" onclick="openTabById('disc')">الانتقال إلى أسئلة المناقشة (١–١١) ⬅️</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- TAB 5: DISCUSSION Q1-11 -->
+  <section id="tab-disc" class="panel">
+    <div class="card">
+      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:12px;">
+        <div>
+          <h2>❓ أسئلة المناقشة كاملة (ص ٤٩–٥٠)</h2>
+          <p class="sub" style="margin:0;">إجابات نموذجية معتمدة على الكتاب وملاحظات المعلمة — اضغطي لكشف الإجابة.</p>
+        </div>
+        <button class="btn ghost sm" id="toggleAllQBtn" onclick="toggleAllDisc()">👁️ إظهار كل الإجابات</button>
+      </div>
+      <div id="discList"></div>
+      <div style="text-align:center;margin-top:14px;">
+        <button class="btn" onclick="openTabById('quiz')">الانتقال إلى التحدي الختامي 🏆</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- TAB 6: FINAL QUIZ -->
+  <section id="tab-quiz" class="panel">
+    <div class="card" id="quizCard">
+      <h2>🏆 التحدي الختامي: الصور والأساليب والأفكار (٩٠ نقطة)</h2>
+      <p class="sub" id="qProg">السؤال 1 من 6</p>
+      <div class="q-box" id="qText"></div>
+      <div class="opts" id="qOpts"></div>
+      <div class="fb" id="qFb">
+        <span id="qFbTxt"></span>
+        <button class="btn sm" id="qNextBtn" onclick="nextQ()">السؤال التالي ⬅️</button>
+      </div>
+    </div>
+    <div class="card" id="finalCard" style="display:none;text-align:center;padding:28px 18px;">
+      <div style="font-size:4rem;">🏆</div>
+      <h2 style="font-size:1.6rem;margin:8px 0;">مبارك! أنهيتِ درس «سنعود» بنجاح</h2>
+      <div style="font-size:2rem;font-weight:800;color:var(--olive);margin:10px 0;" id="finalScore">0 / 260 نقطة</div>
+      <p id="finalMsg" style="color:var(--muted);max-width:480px;margin:0 auto 18px;"></p>
+      <button class="btn" onclick="resetAll()">🔄 إعادة الدرس من البداية</button>
+    </div>
+  </section>
+</main>
+
+<footer>
+  جميع الحقوق محفوظة © <span>للمعلمة شروق مقنصة</span> - يُمنع النسخ أو التعديل أو الاستخدام التجاري بموجب ترخيص CC BY-NC-ND
+</footer>
+
+<script>
+// ===== AUDIO =====
+let sndOn = true;
+const AC = window.AudioContext || window.webkitAudioContext;
+let actx = null;
+function beep(f, d, t='sine') {
+  if (!sndOn) return;
+  try {
+    if (!actx) actx = new AC();
+    const o = actx.createOscillator(), g = actx.createGain();
+    o.type = t; o.frequency.value = f;
+    g.gain.setValueAtTime(0.1, actx.currentTime);
+    g.gain.exponentialRampToValueAtTime(0.001, actx.currentTime + d);
+    o.connect(g); g.connect(actx.destination); o.start(); o.stop(actx.currentTime + d);
+  } catch(e) {}
+}
+const sOk = () => { beep(523, .13); setTimeout(() => beep(659, .18), 100); };
+const sErr = () => beep(210, .2, 'sawtooth');
+const sWin = () => [523,659,784,1046].forEach((f,i)=>setTimeout(()=>beep(f,.22), i*120));
+function toggleSound() {
+  sndOn = !sndOn;
+  document.getElementById('sndBtn').textContent = sndOn ? '🔊 الصوت' : '🔇 صامت';
+}
+
+// ===== SCORE & TABS =====
+let score = 0;
+function addPts(n) { score += n; document.getElementById('scoreVal').textContent = score; }
+
+function openTab(id, btn) {
+  document.querySelectorAll('.panel').forEach(p => p.classList.remove('on'));
+  document.getElementById('tab-' + id).classList.add('on');
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('on'));
+  if (btn) btn.classList.add('on');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+function openTabById(id) {
+  const b = document.querySelector(`.tab[data-t="${id}"]`);
+  openTab(id, b);
+}
+function loadYT(boxId, vid) {
+  document.getElementById(boxId).innerHTML = `<iframe src="https://www.youtube.com/embed/${vid}?autoplay=1&rel=0" title="YouTube video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+}
+
+// ===== TAB 1: POET Q&A =====
+const poetQs = [
+  { q: '١. ما الاسم الحقيقي للشاعر «أبو سلمى»، وأين وُلد؟', a: 'عبد الكريم بن سعيد الكرمي، وُلد في مدينة طولكرم في فلسطين سنة ١٩٠٩م.' },
+  { q: '٢. بماذا لُقّب الشاعر أبو سلمى؟ ولماذا برأيكِ اختير له هذا اللقب؟', a: 'لُقّب بـ «زيتونة فلسطين»؛ لتجذّره في أرضه وثباته وانتمائه العميق لقضية فلسطين وشعبها.' },
+  { q: '٣. اذكري عملين من أعماله الشعرية وكتابًا من مؤلفاته النثرية.', a: 'من أعماله الشعرية: (المشرّد) و(من فلسطين ريشتي). ومن مؤلفاته النثرية: (كفاح عرب فلسطين).' },
+  { q: '٤. كيف انعكست النكبة وحبّه لفلسطين على شعره؟', a: 'عاش في الشتات بعيدًا عن وطنه، فجعل شعره صوتًا للألم والحنين وإشعالًا للأمل وحتمية العودة.' }
+];
+function buildPoetQA() {
+  const el = document.getElementById('poetQA');
+  el.innerHTML = '';
+  poetQs.forEach((item, i) => {
+    const d = document.createElement('div');
+    d.className = 'qa-item';
+    d.innerHTML = `<div class="qa-q"><span>${item.q}</span><button class="btn ghost sm" onclick="toggleQA(this)">اكشفي الإجابة</button></div><div class="qa-a">${item.a}</div>`;
+    el.appendChild(d);
+  });
+}
+function toggleQA(btn) {
+  const a = btn.closest('.qa-item').querySelector('.qa-a');
+  const open = a.classList.toggle('open');
+  btn.textContent = open ? 'إخفاء' : 'اكشفي الإجابة';
+}
+
+// ===== TAB 2: VERSES ANALYSIS =====
+const verses = [
+  {
+    n: 1, axis: 'pain',
+    s1: 'فِلَسْطينُ الْحَبيبَةُ كَيْفَ أَحْيا', s2: 'بَعيداً عَنْ سُهولِكِ وَالْهِضابِ؟',
+    exp: 'ينادي الشاعر وطنه فلسطين الحبيبة، ويؤكّد أنّه لا يستطيع العيش بعيدًا عن سهولها وهضابها ومعالم جمالها.',
+    img: 'أسلوب نداء (بحذف أداة النداء: يا فلسطينُ) يُظهر القرب والمحبة؛ وأسلوب استفهام (كيف أحيا بعيدًا؟) غرضه النفي والتحسّر.',
+    voc: 'الهضاب: جمع هضبة، وهي الجبل المنبسط.',
+    rem: '«أحيا»: فعل معتل (ناقص). «سهولك والهضاب»: جمعا تكسير.'
+  },
+  {
+    n: 2, axis: 'pain',
+    s1: 'تُناديني السُّفوحُ مُخَضَّباتٍ', s2: 'وَفي الْآفاقِ آثارُ الْخِضابِ',
+    exp: 'تنادي سفوح جبال فلسطين الشاعر وهي ملطّخة بدماء الشهداء، حتى تلوّنت الآفاق بآثار تلك الدماء الزكية.',
+    img: 'شبّه السفوح بإنسان ينادي الشاعر؛ وشبّه دماء الشهداء التي روت الأرض بالخِضاب (الحناء) تعظيمًا للتضحية.',
+    voc: 'السفوح: جمع سفح (أسفل الجبل). مُخضّبات: ملطّخة بالدماء. الخضاب: ما يُلوّن به (كالحناء)، والمراد هنا دماء الشهداء.',
+    rem: '«تُنادي»: فعل مضارع مرفوع. «مخضّبات»: جمع مؤنث سالم.'
+  },
+  {
+    n: 3, axis: 'pain',
+    s1: 'تُناديني الشَّواطِئُ باكِياتٍ', s2: 'وَفي سَمْعِ الزَّمانِ صَدى انْتِحابِ',
+    exp: 'تنادي شواطئ فلسطين الشاعر وهي تبكي حزنًا وألمًا على فراق أبنائها وبسبب النكبة، حتى تردّد صوت بكائها في سمع الزمان.',
+    img: 'شبّه الشواطئ بإنسان ينادي ويبكي؛ وشبّه الزمان بإنسان له سمع يردّد صدى البكاء، لإبراز عمق المأساة.',
+    voc: 'الصدى: الصوت المرتدّ المنعكس. الانتحاب: البكاء بصوت عالٍ.',
+    rem: '«الشواطئ»: همزة متطرفة على ياء (قبلها كسرة). «باكيات»: جمع مؤنث سالم.'
+  },
+  {
+    n: 4, axis: 'pain',
+    s1: 'تُناديني مَدائِنُكِ الْيَتامى', s2: 'تُناديني قُراكِ مَعَ الْقِبابِ',
+    exp: 'تنادي المدن والقرى والقباب في فلسطين أبناءها بعد أن فقدت أهلها وأحبّتها بسبب التهجير والاحتلال.',
+    img: 'شبّه المدائن بالطفل اليتيم الذي ينادي أبناءه لتخليصها من دنس الاحتلال. وتكرار «تناديني» (٤ مرات) يدل على شدة الاستغاثة والتعلّق.',
+    voc: 'القباب: جمع قبّة، وهي بناء مستدير مقوّس.',
+    rem: '«مدائن»: همزة متوسطة على نبرة لأنّها مكسورة. «اليتامى»: جمع يتيم.'
+  },
+  {
+    n: 5, axis: 'hope',
+    s1: 'غَداً سَنَعودُ وَالْأَجْيالُ تُصْغي', s2: 'إِلى وَقْعِ الْخُطا عِنْدَ الْإِيابِ',
+    exp: 'هنا يتحوّل الشاعر من الألم إلى الأمل واليقين؛ فيؤكد أنّ العودة قريبة، وستصغي الأجيال والعالم لصوت خطوات العائدين وفرحتهم بأرضهم.',
+    img: 'استخدام «غدًا» والسين في «سنعود» يدل على قرب العودة واليقين التام بتحقّقها.',
+    voc: 'تُصغي: تستمع بانتباه. وقع الخطا: صوت الأقدام. الإياب: الرجوع والعودة.',
+    rem: '«غدًا»: ظرف زمان. «نعود»: فعل معتل أجوف (من عاد).'
+  },
+  {
+    n: 6, axis: 'hope',
+    s1: 'نَعودُ مَعَ الْعَواصِفِ داوِياتٍ', s2: 'مَعَ الْبَرْقِ الْمُقَدَّسِ وَالشِّهابِ',
+    exp: 'يصف الشاعر العودة بأنّها عودة قوية مهيبة تشبه العواصف الهادرة، والبرق المضيء، والشهاب السريع.',
+    img: 'دلالات الألفاظ: العواصف داويات ← القوة والعنفوان؛ البرق المقدّس ← اشتعال الثورة والضياء؛ الشهاب ← السرعة والحسم.',
+    voc: 'داويات: لها صوت عالٍ وقوي. الشهاب: شعلة ساطعة من نار تُرى في السماء.',
+    rem: '«العواصف»: جمع عاصفة. «المقدّس»: اسم مفعول / صفة للبرق.'
+  },
+  {
+    n: 7, axis: 'hope',
+    s1: 'مَعَ الْأَمَلِ الْمُجَنَّحِ وَالْأَغاني', s2: 'مَعَ النَّسْرِ الْمُحَلِّقِ وَالْعُقابِ',
+    exp: 'ستكون العودة مليئة بالأمل والأغاني والفرح، وبعزّة وشموخ كالنسر المحلّق والعُقاب في الأعالي.',
+    img: '«الأمل المجنّح»: شبّه الأمل بطائر له أجنحة يطير نحو الوطن. «النسر المحلّق والعُقاب»: يرمزان للقوة والشموخ والعزّة والانتصار.',
+    voc: 'المجنّح: ذو الأجنحة. العُقاب: طائر جارح قوي، والجمع عِقبان.',
+    rem: '«المحلّق»: اسم فاعل (من حلّق). «الأغاني»: جمع أغنية.'
+  },
+  {
+    n: 8, axis: 'hope',
+    s1: 'أَجَلْ سَتَعودُ آلافُ الضَّحايا', s2: 'ضَحايا الظُّلْمِ تَفْتَحُ كُلَّ بابِ',
+    exp: 'يُصرّ الشاعر ويؤكّد عودة آلاف الضحايا من الأسرى والمهجّرين في الشتات الذين تعرّضوا لظلم الاحتلال، ليفتحوا كل أبواب الحرية والعودة.',
+    img: '«أجل»: حرف جواب يفيد التوكيد واليقين. «تفتح كل باب»: دلالة على زوال الحواجز وفتح أبواب الحرية والعودة مهما طال الظلم.',
+    voc: 'أجل: نعم (للتوكيد). ضحايا الظلم: الأسرى والشهداء والمهجّرون خارج الوطن.',
+    rem: '«تفتح»: فعل صحيح سالم (من فتح). «كلّ باب»: تدل على الشمول.'
+  }
+];
+
+function buildVerses() {
+  const pBox = document.getElementById('verses-pain');
+  const hBox = document.getElementById('verses-hope');
+  pBox.innerHTML = ''; hBox.innerHTML = '';
+  verses.forEach(v => {
+    const c = document.createElement('div');
+    c.className = 'verse-card';
+    c.innerHTML = `
+      <div class="verse-head" onclick="this.parentElement.classList.toggle('open')">
+        <span class="v-num ${v.axis==='pain'?'pain':''}">${v.n}</span>
+        <div class="v-lines"><span>${v.s1}</span><span>${v.s2}</span></div>
+        <span class="v-arrow">▼</span>
+      </div>
+      <div class="verse-body">
+        <div class="vb-grid">
+          <div class="vb-box exp"><b>💡 الشرح الميسّر</b>${v.exp}</div>
+          <div class="vb-box img"><b>🎨 الصورة الفنية والأساليب</b>${v.img}</div>
+          <div class="vb-box voc"><b>📚 المعاني في البيت</b>${v.voc}</div>
+          <div class="vb-box rem"><b>🔎 تذكير بما تعلّمتِ</b>${v.rem}</div>
+        </div>
+      </div>`;
+    (v.axis === 'pain' ? pBox : hBox).appendChild(c);
+  });
+}
+let allVOpen = false;
+function toggleAllVerses() {
+  allVOpen = !allVOpen;
+  document.querySelectorAll('.verse-card').forEach(c => c.classList.toggle('open', allVOpen));
+  document.getElementById('toggleAllVBtn').textContent = allVOpen ? '🙈 إخفاء كل الشروحات' : '👁️ إظهار كل الشروحات';
+}
+
+// ===== TAB 3: VOCABULARY (7 pairs = 70 pts) =====
+const vocabData = [
+  { id: 1, w: 'الهِضاب', m: 'جمع هضبة، وهي الجبل المنبسط' },
+  { id: 2, w: 'السُّفوح', m: 'جمع سفح، وهو أسفل الجبل' },
+  { id: 3, w: 'الصَّدى', m: 'الصوت المرتدّ المنعكس' },
+  { id: 4, w: 'الانتِحاب', m: 'البكاء بصوت عالٍ' },
+  { id: 5, w: 'القِباب', m: 'جمع قبّة، وهي بناء مستدير مقوّس' },
+  { id: 6, w: 'الإياب', m: 'الرجوع والعودة' },
+  { id: 7, w: 'العُقاب', m: 'طائر جارح قوي، والجمع عِقبان' }
+];
+let selW = null, mCount = 0;
+const shuf = a => [...a].sort(() => Math.random() - 0.5);
+
+function setVocabMode(mode) {
+  document.getElementById('vocab-match-area').style.display = mode === 'match' ? 'block' : 'none';
+  document.getElementById('vocab-cards-area').style.display = mode === 'cards' ? 'block' : 'none';
+  document.getElementById('vm-match').className = mode === 'match' ? 'btn sm' : 'btn ghost sm';
+  document.getElementById('vm-cards').className = mode === 'cards' ? 'btn sm' : 'btn ghost sm';
+}
+
+function initVocab() {
+  selW = null; mCount = 0;
+  document.getElementById('vocabDone').style.display = 'none';
+  const wc = document.getElementById('wordsCol'), mc = document.getElementById('meaningsCol');
+  wc.innerHTML = '<div class="col-lbl">الكلمة</div>';
+  mc.innerHTML = '<div class="col-lbl">المعنى</div>';
+  shuf(vocabData).forEach(it => {
+    const d = document.createElement('div');
+    d.className = 'mitem'; d.dataset.id = it.id; d.textContent = it.w;
+    d.onclick = () => {
+      if (d.classList.contains('ok')) return;
+      wc.querySelectorAll('.sel').forEach(x => x.classList.remove('sel'));
+      d.classList.add('sel'); selW = d;
+    };
+    wc.appendChild(d);
+  });
+  shuf(vocabData).forEach(it => {
+    const d = document.createElement('div');
+    d.className = 'mitem'; d.dataset.id = it.id; d.textContent = it.m;
+    d.onclick = () => {
+      if (d.classList.contains('ok') || !selW) return;
+      if (selW.dataset.id === d.dataset.id) {
+        selW.classList.remove('sel'); selW.classList.add('ok'); d.classList.add('ok');
+        selW = null; mCount++; addPts(10); sOk();
+        if (mCount === vocabData.length) {
+          document.getElementById('vocabDone').style.display = 'block';
+          document.querySelector('.tab[data-t="vocab"]').classList.add('done');
+        }
+      } else {
+        const w = selW; w.classList.add('bad'); d.classList.add('bad'); sErr();
+        setTimeout(() => { w.classList.remove('bad','sel'); d.classList.remove('bad'); }, 380);
+        selW = null;
+      }
+    };
+    mc.appendChild(d);
+  });
+
+  // Flashcards
+  const fg = document.getElementById('flashGrid');
+  fg.innerHTML = '';
+  vocabData.forEach(it => {
+    const c = document.createElement('div');
+    c.className = 'fcard';
+    c.innerHTML = `<div class="fw">${it.w}</div><div class="fhint">اضغطي لمعرفة المعنى</div><div class="fm">${it.m}</div>`;
+    c.onclick = () => c.classList.toggle('flipped');
+    fg.appendChild(c);
+  });
+}
+
+// ===== TAB 4: BRIDGE (10 words = 100 pts) =====
+const bridgeWords = [
+  { w: 'مُخضّبات', t: 'pain' },
+  { w: 'غدًا سنعود', t: 'hope' },
+  { w: 'باكيات', t: 'pain' },
+  { w: 'الإياب', t: 'hope' },
+  { w: 'صدى انتحاب', t: 'pain' },
+  { w: 'العواصف داويات', t: 'hope' },
+  { w: 'اليتامى', t: 'pain' },
+  { w: 'البرق المقدّس', t: 'hope' },
+  { w: 'ضحايا الظلم', t: 'pain' },
+  { w: 'الأمل المجنّح', t: 'hope' }
+];
+let bIdx = 0, bWrong = false;
+function initBridge() {
+  bIdx = 0; bWrong = false;
+  document.getElementById('painBucket').innerHTML = '';
+  document.getElementById('hopeBucket').innerHTML = '';
+  document.getElementById('sortActive').style.display = 'block';
+  document.getElementById('bridgeDone').style.display = 'none';
+  document.getElementById('sortFb').className = 'fb';
+  showSortW();
+}
+function showSortW() {
+  document.getElementById('sortCnt').textContent = `الكلمة ${bIdx + 1} من ${bridgeWords.length}`;
+  document.getElementById('sortWord').textContent = bridgeWords[bIdx].w;
+}
+function doSort(ch) {
+  if (bIdx >= bridgeWords.length) return;
+  const it = bridgeWords[bIdx], fb = document.getElementById('sortFb');
+  if (ch === it.t) {
+    if (!bWrong) addPts(10);
+    sOk();
+    const chip = document.createElement('span');
+    chip.className = 'chip'; chip.textContent = it.w;
+    document.getElementById(ch === 'pain' ? 'painBucket' : 'hopeBucket').appendChild(chip);
+    fb.className = 'fb ok';
+    fb.textContent = `✅ أحسنتِ! «${it.w}» من ${ch==='pain'?'ألفاظ الألم والحنين':'ألفاظ الأمل والعودة'}.`;
+    bIdx++; bWrong = false;
+    if (bIdx < bridgeWords.length) showSortW();
+    else {
+      document.getElementById('sortActive').style.display = 'none';
+      document.getElementById('bridgeDone').style.display = 'block';
+      document.querySelector('.tab[data-t="bridge"]').classList.add('done');
+    }
+  } else {
+    bWrong = true; sErr();
+    fb.className = 'fb err';
+    fb.textContent = `❌ جرّبي مرة أخرى! فكّري في شعور «${it.w}» في القصيدة.`;
+  }
+}
+
+// ===== TAB 5: TEXTBOOK DISCUSSION Q1-11 =====
+const discQs = [
+  { q: '١. لماذا تُنادي المدائنُ والقرى الشاعرَ؟', a: 'تناديه شوقًا له، وليخلّصها من دنس الاحتلال.' },
+  { q: '٢. كيفَ وصفَ الشاعرُ العودةَ إلى فلسطينَ؟', a: 'وصفها بأنّه سيعود مع العواصف داويات، ومع البرق المقدّس والشهاب، ومع الأمل المجنّح والأغاني، ومع النسر المحلّق والعُقاب (عودة قوية عزيزة ومظفّرة).' },
+  { q: '٣. بدا الألمُ جليًّا على الشاعرِ في بدايةِ القصيدةِ، ثُمَّ تَحوَّلَ إلى أملٍ. نوضّحُ ذلك.', a: 'وصف الشاعر في الأبيات (١–٤) مشاعره الحزينة على فلسطين التي لا يستطيع العيش بعيدًا عنها، ووصف السفوح المخضّبات والشواطئ الباكيات والمدائن اليتامى فامتلأت بحسرة وألم؛ ثم تحوّلت عاطفته في الأبيات (٥–٨) إلى أمل وتفاؤل بالعودة وإصرار على نيل الحرية.' },
+  { q: '٤. هل أستطيعُ العيشَ بعيدًا عن وطني؟ لماذا؟', a: 'لا؛ لأنّه المكان الذي أحيا فيه وفيه وُلدتُ وعلى أرضه ترعرعتُ وتحت سمائه أعيش (تُقبل إجابة الطالبة المعبّرة عن انتمائها).' },
+  { q: '٥. وصفَ الشاعرُ المدائنَ في فلسطينَ بأنّها يتيمةٌ، هل نُوافقُ الشاعرَ على هذا الوصفِ؟ لماذا؟', a: 'نعم؛ لأنّها فقدت أهلها وأبناءها الذين هُجّروا منها بسبب الاحتلال، وهي بحاجة إلى أبنائها ليعودوا إليها ويحرّروها.' },
+  { q: '٦. ماذا عنى الشاعرُ بضحايا الظلمِ في البيتِ الأخيرِ؟ وما أشكالُ الظلمِ التي تحدّثَ عنها؟', a: 'عنى بهم الأسرى والشهداء والفلسطينيين المهجّرين والمشرّدين خارج الوطن وفي الشتات الذين لا يستطيعون العودة بسبب الاحتلال. ومن أشكال الظلم: القتل، والسجن، والتشريد، والتهجير والإبعاد عن الوطن.' },
+  { q: '٧. نُوضّحُ جمالَ التصويرِ في قولِ الشاعرِ: «تُناديني مَدائِنُكِ اليَتامى».', a: 'شبّه الشاعر المدائن الفلسطينية بالطفل اليتيم الذي ينادي الشاعر لتخليصها من دنس الاحتلال، مما يبرز حجم حزنها وحاجتها لأبنائها.' },
+  { q: '٨. إلامَ يرمزُ الشاعرُ بالنّسرِ المُحلّقِ والعُقابِ في البيتِ السابعِ؟', a: 'يرمزان إلى القوة، والشموخ، والعزّة، والرفعة، وحتمية الانتصار والعودة.' },
+  { q: '٩. نستخرجُ من النصِّ الألفاظَ التي تدلُّ على الألمِ، والألفاظَ التي تدلُّ على الأملِ.', a: '• ألفاظ الألم: مخضّبات، آثار الخضاب، باكيات، صدى انتحاب، اليتامى، الضحايا، الظلم.\n• ألفاظ الأمل: غدًا سنعود، الإياب، العواصف داويات، البرق المقدّس، الشهاب، الأمل المجنّح، الأغاني، النسر المحلّق، العُقاب، تفتح كل باب.' },
+  { q: '١٠. سيطرتْ على الشاعرِ عاطفتانِ. ما هما؟', a: '١) عاطفة الألم والحزن والشوق والحنين للوطن (الأبيات ١–٤).\n٢) عاطفة الأمل والتفاؤل والإصرار على العودة (الأبيات ٥–٨).' },
+  { q: '١١. نُعيّنُ الأبياتَ التي تدلُّ على الأفكارِ الآتيةِ:\nأ- إصرارُ المُهجَّرين على العودةِ إلى وطنِهم.\nب- ستُشرقُ شمسُ الحرّيّةِ مهما طال الظلامُ وعمَّ الظلمُ.\nج- لا يستطيعُ الشاعرُ العيشَ بعيدًا عن وطنِه.', a: '• أ: البيت الخامس (غدًا سنعود...) والبيت الثامن (أجل ستعود آلاف الضحايا...).\n• ب: البيت الثامن (ضحايا الظلم تفتح كل باب) والبيت السادس (مع البرق المقدّس والشهاب).\n• ج: البيت الأول (فلسطين الحبيبة كيف أحيا بعيدًا عن سهولك والهضاب؟).' }
+];
+function buildDisc() {
+  const el = document.getElementById('discList');
+  el.innerHTML = '';
+  discQs.forEach(item => {
+    const d = document.createElement('div');
+    d.className = 'qa-item';
+    d.innerHTML = `<div class="qa-q"><span style="white-space:pre-line">${item.q}</span><button class="btn ghost sm" onclick="toggleQA(this)">اكشفي الإجابة</button></div><div class="qa-a" style="white-space:pre-line">${item.a}</div>`;
+    el.appendChild(d);
+  });
+}
+let allQOpen = false;
+function toggleAllDisc() {
+  allQOpen = !allQOpen;
+  document.querySelectorAll('#discList .qa-item').forEach(it => {
+    it.querySelector('.qa-a').classList.toggle('open', allQOpen);
+    it.querySelector('button').textContent = allQOpen ? 'إخفاء' : 'اكشفي الإجابة';
+  });
+  document.getElementById('toggleAllQBtn').textContent = allQOpen ? '🙈 إخفاء كل الإجابات' : '👁️ إظهار كل الإجابات';
+}
+
+// ===== TAB 6: FINAL QUIZ (6 × 15 = 90 pts) =====
+const quizQs = [
+  {
+    q: 'ما جمال التصوير في قول الشاعر: «تناديني مدائنكِ اليتامى»؟',
+    opts: ['شبّه المدن الفلسطينية بالطفل اليتيم الذي ينادي أبناءه لتخليصها من الاحتلال', 'وصف المدن بأنها عامرة وهادئة ومليئة بالفرح', 'شبّه القباب بالنجوم المضيئة في السماء'],
+    ans: 0, note: 'أحسنتِ! شبّه المدائن بالطفل اليتيم لبيان حزنها وحاجتها لأبنائها.'
+  },
+  {
+    q: 'علامَ يرمز الشاعر بـ «النسر المحلّق والعُقاب» في البيت السابع؟',
+    opts: ['الحزن والضعف والاستسلام', 'القوة والشموخ والعزّة والانتصار', 'السفر والابتعاد عن الوطن'],
+    ans: 1, note: 'رائع! النسر والعُقاب يرمزان للقوة والشموخ والعزّة وحتمية الانتصار.'
+  },
+  {
+    q: 'ما الأسلوب في قول الشاعر: «كيف أحيا بعيدًا عن سهولكِ والهضاب؟» وما غرضه؟',
+    opts: ['أسلوب أمر للرحيل', 'أسلوب استفهام غرضه النفي (لا يستطيع العيش بعيدًا عن وطنه)', 'أسلوب نهي يحذّر من السفر'],
+    ans: 1, note: 'صحيح! استفهام غرضه النفي؛ لا يمكنه العيش بعيدًا عن فلسطين.'
+  },
+  {
+    q: 'علامَ يدلّ تكرار كلمة «تناديني» أربع مرات في الأبيات الأولى؟',
+    opts: ['شدة شوق الأرض لأبنائها واستغاثتها بهم', 'هدوء الشواطئ والجبال', 'نسيان الشاعر لأسماء المدن'],
+    ans: 0, note: 'ممتازة! التكرار يؤكد شدة التعلّق والاستغاثة.'
+  },
+  {
+    q: 'ما دلالة «العواصف داويات» و«البرق المقدّس» و«الشهاب» في البيت السادس؟',
+    opts: ['التردّد والبطء', 'القوة واشتعال الثورة والسرعة في العودة', 'الحزن والبكاء الشديد'],
+    ans: 1, note: 'أحسنتِ! العواصف للقوة، والبرق للثورة والضياء، والشهاب للسرعة.'
+  },
+  {
+    q: 'أيّ بيت يدلّ على فكرة «تحوّل الشاعر من الألم إلى يقين العودة القريبة»؟',
+    opts: ['تناديني الشواطئ باكياتٍ', 'غدًا سنعود والأجيال تصغي', 'فلسطين الحبيبة كيف أحيا'],
+    ans: 1, note: 'رائع! من البيت الخامس «غدًا سنعود» تبدأ عاطفة الأمل والإصرار.'
+  }
+];
+let qIdx = 0;
+function initQuiz() {
+  qIdx = 0;
+  document.getElementById('quizCard').style.display = 'block';
+  document.getElementById('finalCard').style.display = 'none';
+  renderQ();
+}
+function renderQ() {
+  const it = quizQs[qIdx];
+  document.getElementById('qProg').textContent = `السؤال ${qIdx + 1} من ${quizQs.length}`;
+  document.getElementById('qText').textContent = it.q;
+  const c = document.getElementById('qOpts'); c.innerHTML = '';
+  document.getElementById('qFb').className = 'fb';
+  it.opts.forEach((o, i) => {
+    const b = document.createElement('button');
+    b.className = 'opt'; b.textContent = o;
+    b.onclick = () => pickQ(i, b);
+    c.appendChild(b);
+  });
+}
+function pickQ(i, btn) {
+  const it = quizQs[qIdx];
+  const all = document.querySelectorAll('#qOpts .opt');
+  all.forEach(b => b.disabled = true);
+  const fb = document.getElementById('qFb'), ft = document.getElementById('qFbTxt'), nb = document.getElementById('qNextBtn');
+  nb.textContent = qIdx === quizQs.length - 1 ? 'عرض النتيجة النهائية 🏆' : 'السؤال التالي ⬅️';
+  if (i === it.ans) {
+    btn.classList.add('correct'); addPts(15); sOk();
+    fb.className = 'fb ok'; ft.textContent = '✅ ' + it.note;
+  } else {
+    btn.classList.add('wrong'); all[it.ans].classList.add('correct'); sErr();
+    fb.className = 'fb err'; ft.textContent = '❌ الإجابة الصحيحة موضّحة بالأخضر.';
+  }
+}
+function nextQ() {
+  qIdx++;
+  if (qIdx < quizQs.length) renderQ();
+  else {
+    document.querySelector('.tab[data-t="quiz"]').classList.add('done');
+    document.getElementById('quizCard').style.display = 'none';
+    document.getElementById('finalCard').style.display = 'block';
+    document.getElementById('finalScore').textContent = `${score} / 260 نقطة`;
+    document.getElementById('finalMsg').textContent = score >= 210
+      ? 'أداء استثنائي يا بطلة! أتقنتِ معاني القصيدة وصورها ومشاعر أبي سلمى ببراعة.'
+      : 'أداء جميل جدًّا! جرّبي المحطات الأخرى أو أعيدي التحدي للوصول إلى ٢٦٠/٢٦٠.';
+    sWin();
+  }
+}
+
+function resetAll() {
+  score = 0; document.getElementById('scoreVal').textContent = '0';
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('done'));
+  initVocab(); initBridge(); initQuiz();
+  openTabById('intro');
+}
+
+buildPoetQA(); buildVerses(); buildDisc(); initVocab(); initBridge(); initQuiz();
+</script>
+</body>
+</html>
